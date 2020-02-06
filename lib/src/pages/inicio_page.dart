@@ -1,9 +1,13 @@
 import 'dart:io';
+import 'dart:convert';
 import  'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:async/async.dart';
 import 'package:path/path.dart' as Path;
+import 'package:pocket_sommelier/src/models/vino.dart';
+import 'package:pocket_sommelier/src/utils/mapa.dart';
  
 class InicioPage extends StatefulWidget {
   @override
@@ -182,8 +186,8 @@ class _InicioPageState extends State<InicioPage> {
         ),
         onPressed: () {
           //Navigator.push(context, new MaterialPageRoute(builder: (context) => new UIinfo()))
-          _mostrarAlert(context);
-          
+          //_mostrarAlert(context);
+          Navigator.pushNamed(context,'/foto_etiqueta');
         },
       );
 }
@@ -277,18 +281,26 @@ _procesarImagen(ImageSource origen) async  {
      var stream  = new http.ByteStream(DelegatingStream.typed(foto.openRead()));
      var length = await foto.length();
      //print(length);
-     var uri = Uri.parse('http://192.168.1.71:5000/predict');
+     var uri = Uri.parse('http://${IP}/predict');
      //print(uri);
      //print("conexion exitosa");
      var request = new http.MultipartRequest('POST', uri);
      var multipartFile =  new http.MultipartFile('file', stream, length, filename: Path.basename(foto.path));
      request.files.add(multipartFile);
      var response =  await request.send();
+     final respStr = await response.stream.bytesToString();
+     print(respStr);
      if (response.statusCode == 200) {
-           Navigator.pushNamed(context, '/error');
+           int d = respStr.compareTo("error");
+           if(d < 0){
+              Navigator.pushNamed(context, '/infovino',arguments: int.parse(respStr));
+           }else{
+              Navigator.pushNamed(context, '/error');
+           } 
       } else {
+         Navigator.pushNamed(context, '/error');
         // If that response was not OK, throw an error.
-        throw Exception('Fallo al realizar la peticion al servidor');
+        //throw Exception('Fallo al realizar la peticion al servidor');
       }
      //print(response.statusCode);
   }

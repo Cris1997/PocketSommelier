@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:pocket_sommelier/src/pages/vinodetail_page.dart';
 import 'package:pocket_sommelier/src/utils/mapa.dart';
 
 class CatalogoPage extends StatefulWidget {
@@ -14,20 +15,22 @@ class _CatalogoPageState extends State<CatalogoPage> {
  
     return Scaffold(
       backgroundColor: Color(10),
-      body: Center(
+      body:ListView(
+          children: <Widget>[
+            Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-              SizedBox(height: 60),
+              SizedBox(height: 40),
               Text("Pocket Sommelier", 
                     style: TextStyle(
                       fontSize: 28,
                       color: Colors.deepOrangeAccent,
                       fontWeight: FontWeight.bold
                     ),),
-              SizedBox(height: 60),
+              SizedBox(height: 20),
               CarouselSlider(
-                  height: 400.0,
+                  height: 250.0,
                   autoPlay: true,
                   autoPlayAnimationDuration: new Duration(milliseconds:800),
                   onPageChanged: (index) {
@@ -39,7 +42,6 @@ class _CatalogoPageState extends State<CatalogoPage> {
                   items:  urls.map((i) {
                       return Container(
                                 padding: EdgeInsets.all(15.0) ,
-                                width: 250.0,
                                 margin: EdgeInsets.symmetric(horizontal: 5.0),
                                 decoration: BoxDecoration(
                                       color: Colors.white,
@@ -66,7 +68,14 @@ class _CatalogoPageState extends State<CatalogoPage> {
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold
                             ),),
-                    onPressed:()=>Navigator.pushNamed(context, '/infovino',arguments: _current + 1),
+                    onPressed:(){
+                      Navigator.push(context,
+                          MaterialPageRoute(
+                            builder: (context) => VinoDetailPage(id: _current + 1),
+                           ),
+                      );
+                    },
+                    //=>Navigator.pushNamed(context, '/infovino',arguments: _current + 1),
                             //print(_current);
                     color: Colors.deepOrangeAccent,
                     ),
@@ -89,6 +98,10 @@ class _CatalogoPageState extends State<CatalogoPage> {
           ],
         ),
       ),
+
+          ],
+      ) 
+      
     );
 
   }

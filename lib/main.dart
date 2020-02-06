@@ -26,7 +26,7 @@ void main() {
       //Pantalla que muestra la información de un vino
       '/infovino': (context) => VinoDetailPage(),
       //Pantalla para la camara de etiqueta de vino
-      //'/foto_etiqueta': (context) => EtiquetaVinoPage(),
+      '/foto_etiqueta': (context) => EtiquetaVinoPage(),
       //Pantalla para la camara de la carta de vinos
       //'/foto_carta':  (context) => ListaVinosPage(),
       //Pantalla de error al reconocer vinos en la carta o en la foto de etiqueta

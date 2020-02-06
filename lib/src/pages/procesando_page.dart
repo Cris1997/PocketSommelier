@@ -1,10 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 class ProcesandoPage extends StatelessWidget {
-  
-
   @override
+  //File foto;
   Widget build(BuildContext context) {
+    //foto = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
@@ -55,5 +57,7 @@ Widget _labelProcess(){
                     ),)),
               );
 }
+
+
 
 }

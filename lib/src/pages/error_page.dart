@@ -8,11 +8,11 @@ class ErrorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepOrange[300],
-      body: Center(child: _mostrarWidget())
+      body: Center(child: _mostrarWidget(context))
     );
   }
 
-  Widget _mostrarWidget(){
+  Widget _mostrarWidget(BuildContext context){
 
     return Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -36,14 +36,14 @@ class ErrorPage extends StatelessWidget {
             fontWeight: FontWeight.bold
           ),),
           SizedBox(height: 30.0,),
-          _botonCatalogo(),
+          _botonCatalogo(context),
           SizedBox(height: 20.0,),
-          _botonFoto(),
+          _botonFoto(context),
         ],
     );
   }
 
-  Widget _botonCatalogo(){
+  Widget _botonCatalogo(BuildContext context ){
 
     return SizedBox(
         width: 260, 
@@ -60,15 +60,13 @@ class ErrorPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.white
               ),),
-        onPressed: (){
-
-        },
+        onPressed: () => Navigator.pushNamed(context,'/catalogo'),
     )
   );
 
   }
 
-  Widget _botonFoto(){
+  Widget _botonFoto(BuildContext context){
     return SizedBox(
           width: 260,
           height: 60,
@@ -83,7 +81,7 @@ class ErrorPage extends StatelessWidget {
                     color: Colors.white
                   ),),
           onPressed: (){
-           
+            Navigator.pushNamed(context, "/foto_etiqueta");
           }
     )
     );
