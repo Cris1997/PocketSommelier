@@ -1,11 +1,16 @@
 
 import 'dart:convert';
+import 'dart:io';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:image_picker/image_picker.dart';
 import 'dart:async';
-
+import 'package:path/path.dart' as Path;
+import 'package:async/async.dart';
 
 
 import 'package:pocket_sommelier/src/models/vino.dart';
+import 'package:pocket_sommelier/src/pages/listavino_page.dart';
 import 'package:pocket_sommelier/src/utils/mapa.dart';
 
 class VinoProvider{
@@ -65,8 +70,5 @@ Future<List<Vino>> obtenerRecomendaciones(int id_vino) async {
   }
   return vinos_similares;
 }
-
-
-
-
+  
 }

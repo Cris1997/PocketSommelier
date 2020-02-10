@@ -1,15 +1,7 @@
 import 'dart:io';
 import  'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:http/http.dart' as http;
-import 'package:async/async.dart';
-import 'package:path/path.dart' as Path;
-import 'package:pocket_sommelier/src/models/vino.dart';
 import 'package:pocket_sommelier/src/pages/otro.dart';
-import 'package:pocket_sommelier/src/utils/mapa.dart';
-
-import 'dart:convert';
-
 
 class EtiquetaVinoPage extends StatelessWidget {
   File foto;
@@ -111,19 +103,11 @@ class EtiquetaVinoPage extends StatelessWidget {
       );
 
       if( foto != null ){
-        //producto.fotoUrl = null;
-        //print(foto.path);
-        //uploadImageToServer(foto,context);
-       // Navigator.pushNamed(context, "/procesando");
         Navigator.push(context, new MaterialPageRoute(builder: (context) => new IntentoPage(foto:foto)));
       }
-
-      //setState(() {
-        
-      //});
   }
 
-    uploadImageToServer(File foto, BuildContext context) async {
+  /*  uploadImageToServer(File foto, BuildContext context) async {
      //print("Conectando con el servidor....");
 
      var stream  = new http.ByteStream(DelegatingStream.typed(foto.openRead()));
@@ -159,6 +143,6 @@ class EtiquetaVinoPage extends StatelessWidget {
 
 
      //print(response.statusCode);
-  }
+  }*/
 
 }

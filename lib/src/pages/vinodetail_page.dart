@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:pocket_sommelier/src/models/vino.dart';
-import 'package:pocket_sommelier/src/pages/vinos_similarespage.dart';
+import 'package:pocket_sommelier/src/pages/catalogo_page.dart';
 import 'package:pocket_sommelier/src/providers/vino_provider.dart';
 import 'package:pocket_sommelier/src/utils/mapa.dart';
 
@@ -24,9 +24,6 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    print("HOLAR");
-    //print(id);
-    //print(value.nombre);
     return Scaffold(
       backgroundColor: Color(10),
       body: _crearVinoPage(context),
@@ -34,7 +31,6 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
   }
 
   Widget _crearVinoPage(BuildContext context) {
-    //print("hola");
     return SingleChildScrollView(
                   child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -103,7 +99,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
       onPressed: (){
           Navigator.push(context,
                           MaterialPageRoute(
-                            builder: (context) => CatalogoSimilaresPage(vinoid:widget.vino.identificador),
+                            builder: (context) => CatalogoVinosPage(vinoid:widget.vino.identificador),
                            ),
           );
           //vinoProvider.obtenerRecomendaciones(widget.id);

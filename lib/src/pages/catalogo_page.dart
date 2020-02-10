@@ -1,15 +1,37 @@
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:pocket_sommelier/src/models/vino.dart';
 import 'package:pocket_sommelier/src/pages/vinodetail_page.dart';
+import 'package:pocket_sommelier/src/providers/vino_provider.dart';
 import 'package:pocket_sommelier/src/utils/mapa.dart';
 
-class CatalogoPage extends StatefulWidget {
+class CatalogoVinosPage extends StatefulWidget {
+   int vinoid;
+   CatalogoVinosPage({this.vinoid});
    @override
-  _CatalogoPageState createState() => _CatalogoPageState();
+  _CatalogoVinosPageState createState() => _CatalogoVinosPageState();
 }
 
-class _CatalogoPageState extends State<CatalogoPage> {
+class _CatalogoVinosPageState extends State<CatalogoVinosPage> {
   int _current = 0;
+  List<Vino> listaVinos = new List();
+  Vino  vino = new Vino(); //Guardar los datos del vino que se le solicita a la API
+  final vinoProvider = new VinoProvider();// Clase para hacer las peticionnes al servidor
+  //int id ;//Identificador del vino que ha de solicitarse al servidor
+  Future<List<Vino>> _mywines;//Respuesta de convocar el future builder de findWine en vinoProvider
+
+  @override
+  void initState() {
+    super.initState();
+    if(widget.vinoid == 0){
+      _mywines = vinoProvider.findAllWines();
+    }else{
+      _mywines = vinoProvider.obtenerRecomendaciones(widget.vinoid);
+    }
+    
+  }
+
   @override
   Widget build(BuildContext context) {
  
@@ -29,37 +51,10 @@ class _CatalogoPageState extends State<CatalogoPage> {
                       fontWeight: FontWeight.bold
                     ),),
               SizedBox(height: 20),
-              CarouselSlider(
-                  height: 300.0,
-                  autoPlay: true,
-                  autoPlayAnimationDuration: new Duration(milliseconds:800),
-                  onPageChanged: (index) {
-                              setState(() {
-                                _current = index;
-                                //print(index);
-                              });
-                  },
-                  items:  urls.map((i) {
-                      return Container(
-                                width: 200,
-                                padding: EdgeInsets.all(15.0) ,
-                                margin: EdgeInsets.symmetric(horizontal: 5.0),
-                                decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      border: Border.all(width: 6.0, color: Colors.deepOrangeAccent),
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(30.0) //         
-                                      ),),
-                                child: Image.network(i, fit: BoxFit.contain,),
-                                //Text('text $i', style: TextStyle(fontSize: 16.0),)
-                                
-                            );
-                  
-                    }
-                    ).toList(),
-                ),
-                SizedBox(height: 60),
-                SizedBox(
+              _dibujaprueba(),
+              //_carrusel(),
+              SizedBox(height: 60),
+              SizedBox(
                   width: 200, 
                   height: 40,
                   child: RaisedButton(
@@ -70,9 +65,10 @@ class _CatalogoPageState extends State<CatalogoPage> {
                                 fontWeight: FontWeight.bold
                             ),),
                     onPressed:(){
+                      //print("El usuario selecciona:${listaVinos[_current].identificador}");
                       Navigator.push(context,
                           MaterialPageRoute(
-                            //builder: (context) => VinoDetailPage(id: _current + 1),
+                            builder: (context) => VinoDetailPage(vino:listaVinos[_current]),
                            ),
                       );
                     },
@@ -107,4 +103,53 @@ class _CatalogoPageState extends State<CatalogoPage> {
 
   }
 
+  Widget _dibujaprueba(){
+      return FutureBuilder(
+      future: _mywines,
+      builder : (BuildContext context, AsyncSnapshot<List<Vino>> snapshot){
+          if( snapshot.hasData ) {
+            listaVinos = snapshot.data;
+            var litems = listaWidgets(listaVinos);
+            return CarouselSlider(
+                  height: 300.0,
+                  autoPlay: true,
+                  autoPlayAnimationDuration: new Duration(milliseconds:800),
+                  onPageChanged: (index) {
+                              setState(() {
+                                _current = index;
+                                //print(index);
+                              });
+                  },
+                  items: litems,
+                );
+          }else { 
+            return Center(child: CircularProgressIndicator());
+          }
+      },
+    );
+
+  }
+
+  List<Widget> listaWidgets(List<Vino> listaVinos){
+  List<Widget>  widgets = new List();
+  //print(listaVinos.length);
+  for (var i = 0; i < listaVinos.length; i++) {
+      widgets.add(new Container(
+                                width: 200,
+                                padding: EdgeInsets.all(15.0) ,
+                                margin: EdgeInsets.symmetric(horizontal: 5.0),
+                                decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(width: 6.0, color: Colors.deepOrangeAccent),
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(30.0) //         
+                                      ),),
+                                child: Image.network(Uris[listaVinos[i].identificador], fit: BoxFit.contain,),
+                                //Text('text $i', style: TextStyle(fontSize: 16.0),)
+                                
+      )
+      );
+  }
+  return widgets;
+  }
 }

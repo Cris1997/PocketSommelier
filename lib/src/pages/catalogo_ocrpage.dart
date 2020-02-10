@@ -3,33 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:pocket_sommelier/src/models/vino.dart';
 import 'package:pocket_sommelier/src/pages/vinodetail_page.dart';
-import 'package:pocket_sommelier/src/providers/vino_provider.dart';
 import 'package:pocket_sommelier/src/utils/mapa.dart';
 
-class CatalogoSimilaresPage extends StatefulWidget {
-   int vinoid;
-   CatalogoSimilaresPage({this.vinoid});
+class CatalogoOCRVinosPage extends StatefulWidget {
+   List<Vino> vinos;
+   CatalogoOCRVinosPage({this.vinos});
    @override
-  _CatalogoSimilaresPageState createState() => _CatalogoSimilaresPageState();
+  _CatalogoOCRVinosPageState createState() => _CatalogoOCRVinosPageState();
 }
 
-class _CatalogoSimilaresPageState extends State<CatalogoSimilaresPage> {
+class _CatalogoOCRVinosPageState extends State<CatalogoOCRVinosPage> {
   int _current = 0;
-  List<Vino> listaVinos = new List();
   Vino  vino = new Vino(); //Guardar los datos del vino que se le solicita a la API
-  final vinoProvider = new VinoProvider();// Clase para hacer las peticionnes al servidor
-  //int id ;//Identificador del vino que ha de solicitarse al servidor
-  Future<List<Vino>> _mywines;//Respuesta de convocar el future builder de findWine en vinoProvider
-
   @override
   void initState() {
     super.initState();
-    if(widget.vinoid == 0){
-      _mywines = vinoProvider.findAllWines();
-    }else{
-      _mywines = vinoProvider.obtenerRecomendaciones(widget.vinoid);
-    }
-    
   }
 
   @override
@@ -65,10 +53,10 @@ class _CatalogoSimilaresPageState extends State<CatalogoSimilaresPage> {
                                 fontWeight: FontWeight.bold
                             ),),
                     onPressed:(){
-                      print("El usuario selecciona:${listaVinos[_current].identificador}");
+                      //print("El usuario selecciona:${listaVinos[_current].identificador}");
                       Navigator.push(context,
                           MaterialPageRoute(
-                            builder: (context) => VinoDetailPage(vino:listaVinos[_current]),
+                            builder: (context) => VinoDetailPage(vino:widget.vinos[_current]),
                            ),
                       );
                     },
@@ -104,12 +92,7 @@ class _CatalogoSimilaresPageState extends State<CatalogoSimilaresPage> {
   }
 
   Widget _dibujaprueba(){
-      return FutureBuilder(
-      future: _mywines,
-      builder : (BuildContext context, AsyncSnapshot<List<Vino>> snapshot){
-          if( snapshot.hasData ) {
-            listaVinos = snapshot.data;
-            var litems = listaWidgets(listaVinos);
+            var litems = listaWidgets(widget.vinos);
             return CarouselSlider(
                   height: 300.0,
                   autoPlay: true,
@@ -122,12 +105,7 @@ class _CatalogoSimilaresPageState extends State<CatalogoSimilaresPage> {
                   },
                   items: litems,
                 );
-          }else { 
-            return Center(child: CircularProgressIndicator());
-          }
-      },
-    );
-
+   
   }
 
   List<Widget> listaWidgets(List<Vino> listaVinos){

@@ -1,10 +1,12 @@
 import 'dart:io';
-import  'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:async/async.dart';
 import 'package:path/path.dart' as Path;
-import 'package:pocket_sommelier/src/pages/vinos_similarespage.dart';
+import 'package:pocket_sommelier/src/pages/carta_vinopage.dart';
+import 'package:pocket_sommelier/src/pages/catalogo_page.dart';
+import 'package:pocket_sommelier/src/providers/vino_provider.dart';
 import 'package:pocket_sommelier/src/utils/mapa.dart';
  
 class InicioPage extends StatefulWidget {
@@ -15,7 +17,7 @@ class InicioPage extends StatefulWidget {
 class _InicioPageState extends State<InicioPage> {
   
   File foto;
-  
+  VinoProvider vp = new VinoProvider();
   @override
   Widget build(BuildContext context) {
     var column = Column(
@@ -69,7 +71,7 @@ class _InicioPageState extends State<InicioPage> {
     );
   }
 
- void _mostrarAlert(BuildContext context) {
+ /*void _mostrarAlert(BuildContext context) {
 
     showDialog(
       context: context,
@@ -151,10 +153,7 @@ class _InicioPageState extends State<InicioPage> {
     _seleccionarFoto() async {
       _procesarImagen(ImageSource.gallery);
   }
-
-
-  
-
+  */
   //Métodos para mostrar organizadamente los elementos de la interfaz gráfica
   Widget _mostrarLogo(){
       return Image(
@@ -206,7 +205,9 @@ Widget _botonLista(){
         shape: RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(10.0),
         ),
-        onPressed: () {},
+        onPressed:(){
+          Navigator.pushNamed(context,'/foto_carta');
+        },
       );
 }
 
@@ -231,11 +232,10 @@ Widget _botonConoce(){
                 onPressed:(){
                   Navigator.push(context,
                           MaterialPageRoute(
-                            builder: (context) => CatalogoSimilaresPage(vinoid: 0),
+                            builder: (context) => CatalogoVinosPage(vinoid: 0),
                            ),
                       );
                 } 
-                //=> Navigator.pushNamed(context, '/catalogo',),
               );
 
 
@@ -262,53 +262,6 @@ Widget _botonRegresar(){
 }
 
 
-_procesarImagen(ImageSource origen) async  {
-
-      foto = await ImagePicker.pickImage(
-          source: origen
-      );
-
-      if( foto != null ){
-        //producto.fotoUrl = null;
-        //print(foto.path);
-        uploadImageToServer(foto);
-       // Navigator.push(context, new MaterialPageRoute(builder: (context) => new Captura()));
-      }
-
-      setState(() {
-        
-      });
-  }
-
-  uploadImageToServer(File foto) async {
-     //print("Conectando con el servidor....");
-
-     var stream  = new http.ByteStream(DelegatingStream.typed(foto.openRead()));
-     var length = await foto.length();
-     //print(length);
-     var uri = Uri.parse('http://${IP}/predict');
-     //print(uri);
-     //print("conexion exitosa");
-     var request = new http.MultipartRequest('POST', uri);
-     var multipartFile =  new http.MultipartFile('file', stream, length, filename: Path.basename(foto.path));
-     request.files.add(multipartFile);
-     var response =  await request.send();
-     final respStr = await response.stream.bytesToString();
-     print(respStr);
-     if (response.statusCode == 200) {
-           int d = respStr.compareTo("error");
-           if(d < 0){
-              Navigator.pushNamed(context, '/infovino',arguments: int.parse(respStr));
-           }else{
-              Navigator.pushNamed(context, '/error');
-           } 
-      } else {
-         Navigator.pushNamed(context, '/error');
-        // If that response was not OK, throw an error.
-        //throw Exception('Fallo al realizar la peticion al servidor');
-      }
-     //print(response.statusCode);
-  }
 
 }
 

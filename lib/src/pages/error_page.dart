@@ -1,4 +1,5 @@
 
+import 'package:pocket_sommelier/src/pages/catalogo_page.dart';
 import 'package:pocket_sommelier/src/pages/inicio_page.dart';
 
 import 'package:flutter/material.dart';
@@ -60,7 +61,13 @@ class ErrorPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.white
               ),),
-        onPressed: () => Navigator.pushNamed(context,'/catalogo'),
+        onPressed: (){
+          Navigator.push(context,
+                          MaterialPageRoute(
+                            builder: (context) => CatalogoVinosPage(vinoid: 0),
+                           ),
+                      );
+        }
     )
   );
 

@@ -1,7 +1,10 @@
 
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:pocket_sommelier/src/models/vino.dart';
+import 'package:pocket_sommelier/src/pages/catalogo_ocrpage.dart';
 import 'package:pocket_sommelier/src/pages/error_page.dart';
 import 'package:pocket_sommelier/src/pages/procesando_page.dart';
 import 'package:http/http.dart' as http;
@@ -18,12 +21,10 @@ class ListaVinosPage extends StatefulWidget {
 }
 
 class _ListaVinosPage extends State<ListaVinosPage> {
-var _result;
+String _result;
 @override
     void initState() {
-        sendImagetoServer(widget.foto).then((result) {
-            // If we need to rebuild the widget with the resulting data,
-            // make sure to use `setState`
+            enviarFotoOCR(widget.foto).then((result) {
             setState(() {
                 _result = result;
                   
@@ -33,22 +34,45 @@ var _result;
 
   @override
   Widget build(BuildContext context) {
-     if (_result != null) {
+        if (_result != null) {
             // This is what we show while we're loading
-            print(_result);
-            int d = _result.compareTo("error");
-            if(d < 0){
-             // return new VinoDetailPage2(id:int.parse(_result) );
-           }else{
+           //print(_result);
+           if(_result.compareTo("error")==0){
               return new ErrorPage();
+           }else{
+                  //Decodificar los datos a JSON y generar la lista para mostrar en el carrusel
+                  var jsonfiles  = json.decode(_result);
+                  List<Vino> vinosCarta = new List(); 
+                  for (var data in jsonfiles) {
+                      final temporal = Vino.fromJson(data);
+                      //print(temporal.identificador);
+                      //print(temporal.nombre);
+                      vinosCarta.add(temporal);
+                  }
+                  return new CatalogoOCRVinosPage(vinos: vinosCarta);
            } 
-            
         }
-        // Do something with the `_result`s here
+        // Mientras no se obtenga respuesta la aplicación mostrara la interfaz gráfica de procesando
         return new ProcesandoPage();
-  }
+    }
 
-  sendImagetoServer(File foto) async{
+  enviarFotoOCR(File foto) async{
+     //print("HOLA");
+     var stream  = new http.ByteStream(DelegatingStream.typed(foto.openRead()));
+     var length = await foto.length();
+     var uri = Uri.parse('http://${IP}/ocr');
+     var request = new http.MultipartRequest('POST', uri);
+     var multipartFile =  new http.MultipartFile('file', stream, length, filename: Path.basename(foto.path));
+     request.files.add(multipartFile);
+     var response =  await request.send();
+     final respStr = await response.stream.bytesToString();
+     if (response.statusCode == 200) {
+        return respStr;
+     }else{
+        return "error";
+     }
+  } 
+  /*sendImagetoServer(File foto) async{
 
      var stream  = new http.ByteStream(DelegatingStream.typed(foto.openRead()));
      var length = await foto.length();
@@ -68,7 +92,8 @@ var _result;
      
   FutureOr Function(http.StreamedResponse value) _merror() {
           print("Servidor no disponible");
-       }  
+       }  */
+
 
 
 
