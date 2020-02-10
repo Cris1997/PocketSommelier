@@ -1,12 +1,10 @@
 import 'dart:io';
-import 'dart:convert';
 import  'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:async/async.dart';
 import 'package:path/path.dart' as Path;
-import 'package:pocket_sommelier/src/models/vino.dart';
+import 'package:pocket_sommelier/src/pages/vinos_similarespage.dart';
 import 'package:pocket_sommelier/src/utils/mapa.dart';
  
 class InicioPage extends StatefulWidget {
@@ -230,7 +228,14 @@ Widget _botonConoce(){
                     //fontStyle: FontStyle.,
                     textBaseline: TextBaseline.alphabetic
                 ),),
-                onPressed:() => Navigator.pushNamed(context, '/catalogo',),
+                onPressed:(){
+                  Navigator.push(context,
+                          MaterialPageRoute(
+                            builder: (context) => CatalogoSimilaresPage(vinoid: 0),
+                           ),
+                      );
+                } 
+                //=> Navigator.pushNamed(context, '/catalogo',),
               );
 
 

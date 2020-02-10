@@ -2,30 +2,29 @@
 
 import 'package:flutter/material.dart';
 import 'package:pocket_sommelier/src/models/vino.dart';
+import 'package:pocket_sommelier/src/pages/vinos_similarespage.dart';
 import 'package:pocket_sommelier/src/providers/vino_provider.dart';
 import 'package:pocket_sommelier/src/utils/mapa.dart';
 
 class VinoDetailPage extends StatefulWidget{
-  final int id;
-  const VinoDetailPage({this.id});
+  Vino vino;
+  VinoDetailPage({this.vino});
   @override
   _VinoDetailPageState createState() => _VinoDetailPageState();
 }
 
 class _VinoDetailPageState extends State<VinoDetailPage> {
-  Vino  vino = new Vino(); //Guardar los datos del vino que se le solicita a la API
+  //Vino  vino = new Vino(); //Guardar los datos del vino que se le solicita a la API
   final vinoProvider = new VinoProvider();// Clase para hacer las peticionnes al servidor
   //int id ;//Identificador del vino que ha de solicitarse al servidor
-  Future<Vino> _mywine;//Respuesta de convocar el future builder de findWine en vinoProvider
-
   @override
   void initState() {
     super.initState();
-    _mywine = vinoProvider.findWine(widget.id);
   }
 
   @override
   Widget build(BuildContext context) {
+    print("HOLAR");
     //print(id);
     //print(value.nombre);
     return Scaffold(
@@ -36,13 +35,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
 
   Widget _crearVinoPage(BuildContext context) {
     //print("hola");
-    return FutureBuilder(
-      future: _mywine,
-      //vinoProvider.findWine(id),
-      builder : (BuildContext context, AsyncSnapshot<Vino> snapshot){
-          if( snapshot.hasData ) {
-            vino = snapshot.data;
-            return SingleChildScrollView(
+    return SingleChildScrollView(
                   child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -61,13 +54,11 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
                     ],
                   ),
              );
-          }else { 
+          /*else { 
             return Center(child: CircularProgressIndicator());
-          }
-      },
-    );
-  }
-
+          }*/
+      }
+  
   Widget _mostrarLetrero(){
     return Text('Pocket Sommelier',
                   style: TextStyle(
@@ -80,32 +71,19 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
 
   Widget _mostrarImagen(){
     //print(Uris[vino.identificador]);
-    return FadeInImage(
-            image: NetworkImage(Uris[vino.identificador]),
+    return 
+    FadeInImage(
+            image: NetworkImage(Uris[widget.vino.identificador]),
             placeholder:AssetImage('assets/loading-gear-3.gif',),
             height: 300.0,
             width: 200,
-            fit: BoxFit.contain
+            fit: BoxFit.contain,
+            
           ); 
-        
-    /*Center(
-        child: Container(
-          margin: EdgeInsets.all(10.0),
-          //color: Colors.white,
-          width: 200.0,
-          height: 300.0,
-          decoration:BoxDecoration(
-                     image: DecorationImage(
-                     fit: BoxFit.fitHeight,
-                     image: NetworkImage(Uris[vino.identificador]),
-                    ),
-                  ),
-        ),*/
-        
   }
 
   Widget _mostrarNombre(){
-    return Text('${vino.nombre}',
+    return Text('${widget.vino.nombre}',
                   style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -123,7 +101,12 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
       padding: EdgeInsets.all(10.0),
       splashColor: Colors.deepOrange,
       onPressed: (){
-
+          Navigator.push(context,
+                          MaterialPageRoute(
+                            builder: (context) => CatalogoSimilaresPage(vinoid:widget.vino.identificador),
+                           ),
+          );
+          //vinoProvider.obtenerRecomendaciones(widget.id);
       },
       child: Text("Ver similares",
              style: TextStyle(
@@ -144,7 +127,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
                color: Colors.deepOrangeAccent,
                fontSize: 20,
              ),),
-         Text("${vino.variedad} \n", //VARIEDAD DEL VINO
+         Text("${widget.vino.variedad} \n", //VARIEDAD DEL VINO
              style: TextStyle(
                color: Colors.white,
                fontSize: 20
@@ -154,7 +137,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
                color: Colors.deepOrangeAccent,
                fontSize: 20
              ),),
-        Text("${vino.porcentaje_alcohol}\n", //GRADO ALCOHOLICO
+        Text("${widget.vino.porcentaje_alcohol}\n", //GRADO ALCOHOLICO
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
@@ -164,7 +147,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
                color: Colors.deepOrangeAccent,
                fontSize: 20
              ),),
-        Text("${vino.pais} \n", //PAIS
+        Text("${widget.vino.pais} \n", //PAIS
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
@@ -174,7 +157,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
                color: Colors.deepOrangeAccent,
                fontSize: 20
              ),),
-        Text("${vino.region} \n", //REGIÓN
+        Text("${widget.vino.region} \n", //REGIÓN
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
@@ -184,7 +167,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
                color: Colors.deepOrangeAccent,
                fontSize: 20
              ),),
-        Text("${vino.guarda} \n",
+        Text("${widget.vino.guarda} \n",
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
@@ -194,7 +177,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
                color: Colors.deepOrangeAccent,
                fontSize: 20
              ),),
-        Text("${vino.temperatura_consumo} °C\n",
+        Text("${widget.vino.temperatura_consumo} °C\n",
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
@@ -204,7 +187,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
                color: Colors.deepOrangeAccent,
                fontSize: 20
         ),),
-        Text("${vino.color} \n",
+        Text("${widget.vino.color} \n",
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
@@ -214,7 +197,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
                color: Colors.deepOrangeAccent,
                fontSize: 20
              ),),
-        Text("${vino.aroma} \n",
+        Text("${widget.vino.aroma} \n",
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
@@ -224,7 +207,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
                color: Colors.deepOrangeAccent,
                fontSize: 20
              ),),
-        Text("${vino.sabor} \n",
+        Text("${widget.vino.sabor} \n",
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
@@ -234,7 +217,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
                color: Colors.deepOrangeAccent,
                fontSize: 20
              ),),
-        Text("${vino.maridaje} \n",
+        Text("${widget.vino.maridaje} \n",
               style: TextStyle(
                color: Colors.white,
                fontSize: 20

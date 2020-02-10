@@ -30,7 +30,7 @@ class _CatalogoPageState extends State<CatalogoPage> {
                     ),),
               SizedBox(height: 20),
               CarouselSlider(
-                  height: 250.0,
+                  height: 300.0,
                   autoPlay: true,
                   autoPlayAnimationDuration: new Duration(milliseconds:800),
                   onPageChanged: (index) {
@@ -41,13 +41,14 @@ class _CatalogoPageState extends State<CatalogoPage> {
                   },
                   items:  urls.map((i) {
                       return Container(
+                                width: 200,
                                 padding: EdgeInsets.all(15.0) ,
                                 margin: EdgeInsets.symmetric(horizontal: 5.0),
                                 decoration: BoxDecoration(
                                       color: Colors.white,
                                       border: Border.all(width: 6.0, color: Colors.deepOrangeAccent),
                                       borderRadius: BorderRadius.all(
-                                        Radius.circular(30.0) //         <--- border radius here
+                                        Radius.circular(30.0) //         
                                       ),),
                                 child: Image.network(i, fit: BoxFit.contain,),
                                 //Text('text $i', style: TextStyle(fontSize: 16.0),)
@@ -71,7 +72,7 @@ class _CatalogoPageState extends State<CatalogoPage> {
                     onPressed:(){
                       Navigator.push(context,
                           MaterialPageRoute(
-                            builder: (context) => VinoDetailPage(id: _current + 1),
+                            //builder: (context) => VinoDetailPage(id: _current + 1),
                            ),
                       );
                     },

@@ -4,8 +4,12 @@ import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:async/async.dart';
 import 'package:path/path.dart' as Path;
+import 'package:pocket_sommelier/src/models/vino.dart';
 import 'package:pocket_sommelier/src/pages/otro.dart';
 import 'package:pocket_sommelier/src/utils/mapa.dart';
+
+import 'dart:convert';
+
 
 class EtiquetaVinoPage extends StatelessWidget {
   File foto;
@@ -132,8 +136,12 @@ class EtiquetaVinoPage extends StatelessWidget {
      var multipartFile =  new http.MultipartFile('file', stream, length, filename: Path.basename(foto.path));
      request.files.add(multipartFile);
      var response =  await request.send();
+     //print(response);
      final respStr = await response.stream.bytesToString();
-     print(respStr);
+     Vino wine_found = Vino.fromJson(json.decode(respStr));
+     print(wine_found.maridaje);
+     /*
+     final respStr = await response.stream.bytesToString();
      if (response.statusCode == 200) {
            int d = respStr.compareTo("error");
            if(d < 0){
@@ -146,6 +154,10 @@ class EtiquetaVinoPage extends StatelessWidget {
         // If that response was not OK, throw an error.
         //throw Exception('Fallo al realizar la peticion al servidor');
       }
+      */
+
+
+
      //print(response.statusCode);
   }
 

@@ -14,6 +14,7 @@ class VinoProvider{
   Future<Vino> findWine(int id) async {
 
   var data = await http.get("http://${IP}/foundone/${id}");
+  print(data);
   //var jsondata = json.decode(data.body);
   if (data.statusCode == 200) {
     // EL codigo 200 indica que la operacion se llevo cabo de manera adecuada, parsear the JSON.
@@ -28,16 +29,44 @@ class VinoProvider{
   //print(jsondata);
 }
 
-  Future<List<Vino>> findAllWines() async {
-  
-  var data  = await  http.get("http://${IP}/allwines/");
-  var jsonfiles =  json.decode(data.body);
-  List<Vino> newslist = [];
+Future<List<Vino>> findAllWines() async {
+
+  final url = "http://${IP}/allwines/";
+  final resp = await http.get(url);
+
+  var jsonfiles  = json.decode(resp.body);
+
+  final List<Vino> vinos_todo = new List(); 
+
   for (var data in jsonfiles) {
-      print(data);
+      final temporal = Vino.fromJson(data);
+      //print(temporal.identificador);
+      //print(temporal.nombre);
+      vinos_todo.add( temporal );
   }
-  return newslist; 
+  return vinos_todo;
 }
+
+
+Future<List<Vino>> obtenerRecomendaciones(int id_vino) async {
+  
+  final url = "http://${IP}/recomendador/${id_vino}";
+  final resp = await http.get(url);
+
+  var jsonfiles  = json.decode(resp.body);
+
+  final List<Vino> vinos_similares = new List(); 
+
+  for (var data in jsonfiles) {
+      final temporal = Vino.fromJson(data);
+      //print(temporal.identificador);
+      //print(temporal.nombre);
+      vinos_similares.add( temporal );
+  }
+  return vinos_similares;
+}
+
+
 
 
 }
