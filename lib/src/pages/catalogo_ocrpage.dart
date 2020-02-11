@@ -13,8 +13,9 @@ class CatalogoOCRVinosPage extends StatefulWidget {
 }
 
 class _CatalogoOCRVinosPageState extends State<CatalogoOCRVinosPage> {
-  int _current = 0;
+  int _current = 0;//La variable que almacena el índice de la imagen actual del carrusel
   Vino  vino = new Vino(); //Guardar los datos del vino que se le solicita a la API
+  //Estado inicial del widget
   @override
   void initState() {
     super.initState();
@@ -22,7 +23,7 @@ class _CatalogoOCRVinosPageState extends State<CatalogoOCRVinosPage> {
 
   @override
   Widget build(BuildContext context) {
- 
+    //Construcción de la interfaz gráfica 
     return Scaffold(
       backgroundColor: Color(10),
       body:ListView(
@@ -39,7 +40,7 @@ class _CatalogoOCRVinosPageState extends State<CatalogoOCRVinosPage> {
                       fontWeight: FontWeight.bold
                     ),),
               SizedBox(height: 20),
-              _dibujaprueba(),
+              _dibujaCarrusel(),
               //_carrusel(),
               SizedBox(height: 60),
               SizedBox(
@@ -53,6 +54,7 @@ class _CatalogoOCRVinosPageState extends State<CatalogoOCRVinosPage> {
                                 fontWeight: FontWeight.bold
                             ),),
                     onPressed:(){
+                      //Si el usuario presiona el botón 
                       //print("El usuario selecciona:${listaVinos[_current].identificador}");
                       Navigator.push(context,
                           MaterialPageRoute(
@@ -90,20 +92,21 @@ class _CatalogoOCRVinosPageState extends State<CatalogoOCRVinosPage> {
     );
 
   }
-
-  Widget _dibujaprueba(){
+  //Método construye las tarjetas con las imágenes que aparecen en el carrusel
+  Widget _dibujaCarrusel(){
             var litems = listaWidgets(widget.vinos);
             return CarouselSlider(
                   height: 300.0,
                   autoPlay: true,
                   autoPlayAnimationDuration: new Duration(milliseconds:800),
-                  onPageChanged: (index) {
+                  onPageChanged: (index) { //este método se dispara 
                               setState(() {
+                                //Cada que el carrusel gira el _current cambia su valor 
                                 _current = index;
                                 //print(index);
                               });
                   },
-                  items: litems,
+                  items: litems,//Lista de widgets (tarjetas con imágenes que son los elementos del carrusel)
                 );
    
   }

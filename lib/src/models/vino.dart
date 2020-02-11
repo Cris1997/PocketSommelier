@@ -1,5 +1,13 @@
-class Vino {
+/*Esta clase permite almacenar los datos que 
+llegan en formato JSON a la aplicación 
+después de ejecutar determinadas funciones. C
+Cada archivo JSON es */
 
+
+class Vino {
+    /*Los atributos de la clase
+    hacen referencia a cada uno de los campos
+    que hay en la base de datos*/
     int identificador;
     String nombre;
     List<dynamic> variedad;
@@ -13,7 +21,7 @@ class Vino {
     String sabor;
     String maridaje;
     String name_image;
-
+    /*Constructor de la clase*/
     Vino({this.identificador, 
     this.nombre, 
     this.variedad,
@@ -28,7 +36,10 @@ class Vino {
     this.maridaje,
     this.name_image
     });
-
+   /*
+   Este método funciona para convertir los datos JSON en 
+   instancias de tipo Vino.
+   */
    factory Vino.fromJson(Map<String, dynamic> json) {
     return Vino(
       identificador: json['_id'],

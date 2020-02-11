@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 
-final String IP = "10.102.225.210:5000";
+final String IP = "10.100.66.198:5000";
 
 
 final Map<int,String> Uris = {

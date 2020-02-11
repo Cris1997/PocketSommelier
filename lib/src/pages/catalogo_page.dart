@@ -7,26 +7,27 @@ import 'package:pocket_sommelier/src/providers/vino_provider.dart';
 import 'package:pocket_sommelier/src/utils/mapa.dart';
 
 class CatalogoVinosPage extends StatefulWidget {
-   int vinoid;
-   CatalogoVinosPage({this.vinoid});
+   int vinoid;//Identificaro del vino proveniente de la pantalla anterior
+   CatalogoVinosPage({this.vinoid});//Constructor de la clase
    @override
   _CatalogoVinosPageState createState() => _CatalogoVinosPageState();
 }
 
 class _CatalogoVinosPageState extends State<CatalogoVinosPage> {
-  int _current = 0;
-  List<Vino> listaVinos = new List();
+  int _current = 0; // Índice que almacena el número de la tarjeta actual del carrusel
+  List<Vino> listaVinos = new List();//Lista que almacena los datos que provienen de la respuesta del servidor
   Vino  vino = new Vino(); //Guardar los datos del vino que se le solicita a la API
   final vinoProvider = new VinoProvider();// Clase para hacer las peticionnes al servidor
   //int id ;//Identificador del vino que ha de solicitarse al servidor
   Future<List<Vino>> _mywines;//Respuesta de convocar el future builder de findWine en vinoProvider
-
   @override
   void initState() {
     super.initState();
     if(widget.vinoid == 0){
+      //Si el identificador del vino es 0 el usuario desea ver el catálogo de todos los vinos del sistema
       _mywines = vinoProvider.findAllWines();
     }else{
+      //Si el identificador es diferente de cero, entonces el usuario desea un recomendación de vinos similiares
       _mywines = vinoProvider.obtenerRecomendaciones(widget.vinoid);
     }
     
@@ -51,7 +52,7 @@ class _CatalogoVinosPageState extends State<CatalogoVinosPage> {
                       fontWeight: FontWeight.bold
                     ),),
               SizedBox(height: 20),
-              _dibujaprueba(),
+              _dibujaCarrusel(),
               //_carrusel(),
               SizedBox(height: 60),
               SizedBox(
@@ -65,7 +66,10 @@ class _CatalogoVinosPageState extends State<CatalogoVinosPage> {
                                 fontWeight: FontWeight.bold
                             ),),
                     onPressed:(){
-                      //print("El usuario selecciona:${listaVinos[_current].identificador}");
+                      /*Si el usuario desea ver un vino en particular 
+                      convocamos a la pantalla que despliega el detalle del vino seleccionado,
+                      para eso tenemos que mandarle el objeto vino de la lista que corresponde
+                      al que seleccionó el usuario*/
                       Navigator.push(context,
                           MaterialPageRoute(
                             builder: (context) => VinoDetailPage(vino:listaVinos[_current]),
@@ -88,6 +92,8 @@ class _CatalogoVinosPageState extends State<CatalogoVinosPage> {
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold
                             ),),
+                  /*Si el usuario presiona el votón "Inicio",
+                  desplegamos la pantalla de inicio */
                   onPressed:()=> Navigator.pushNamed(context, '/inicio'),
                   color: Colors.deepOrangeAccent,
                 )
@@ -103,7 +109,7 @@ class _CatalogoVinosPageState extends State<CatalogoVinosPage> {
 
   }
 
-  Widget _dibujaprueba(){
+  Widget _dibujaCarrusel(){
       return FutureBuilder(
       future: _mywines,
       builder : (BuildContext context, AsyncSnapshot<List<Vino>> snapshot){
@@ -130,6 +136,7 @@ class _CatalogoVinosPageState extends State<CatalogoVinosPage> {
 
   }
 
+  //Método que construye la lista de widgets para dibujar el carrusel en la app
   List<Widget> listaWidgets(List<Vino> listaVinos){
   List<Widget>  widgets = new List();
   //print(listaVinos.length);
