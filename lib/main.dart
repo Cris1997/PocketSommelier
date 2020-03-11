@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pocket_sommelier/src/pages/carta_vinopage.dart';
 import 'package:pocket_sommelier/src/pages/edad_page.dart';
 import 'package:pocket_sommelier/src/pages/error_page.dart';
@@ -10,12 +11,21 @@ import 'package:pocket_sommelier/src/pages/vinodetail_page.dart';
 
 
 void main() {
-  runApp(MaterialApp(
+  runApp(new MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    return MaterialApp(
     title: 'Pocket Sommelier',
     color: Colors.deepOrangeAccent,
     // Start the app with the "/" named route. In this case, the app starts
     // on the FirstScreen widget.
     debugShowCheckedModeBanner: false,
+    theme: ThemeData(accentColor: Colors.deepOrangeAccent),
     initialRoute: '/',
     routes: {
       // Pantalla inicial al abrir la app
@@ -33,5 +43,8 @@ void main() {
       //Pantalla que muestra al usuario que se está procesando una fotografía
       '/procesando': (context) => ProcesandoPage(),
     },
-  ));
+   );
+  }
 }
+
+

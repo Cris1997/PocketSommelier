@@ -19,7 +19,7 @@ class VinoProvider{
   Future<Vino> findWine(int id) async {
 
   var data = await http.get("http://${IP}/foundone/${id}");
-  print(data);
+  //print(data);
   //var jsondata = json.decode(data.body);
   if (data.statusCode == 200) {
     // EL codigo 200 indica que la operacion se llevo cabo de manera adecuada, parsear the JSON.

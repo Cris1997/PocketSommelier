@@ -1,8 +1,24 @@
+import 'dart:async';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 
-class ProcesandoPage extends StatelessWidget {
+import 'error_page.dart';
+
+class ProcesandoPage extends StatefulWidget {
+  int idprocess;//Identificaro del vino proveniente de la pantalla anterior
+  ProcesandoPage({this.idprocess});
+  @override
+  _ProcesandoPageState createState() => _ProcesandoPageState();
+}
+
+class _ProcesandoPageState extends State<ProcesandoPage> {
+
+   @override
+  initState() {
+    super.initState();
+    new Timer(const Duration(seconds: 10), onClose);
+  }
+  
   @override
   //File foto;
   Widget build(BuildContext context) {
@@ -20,6 +36,20 @@ class ProcesandoPage extends StatelessWidget {
       ),
     );
   }
+
+void onClose() {
+    Navigator.of(context).pushReplacement(new PageRouteBuilder(
+        maintainState: true,
+        opaque: true,
+        pageBuilder: (context, _, __) => (widget.idprocess ==0) ? new ErrorPage(iderror: 0,): new ErrorPage(iderror: 1,),
+        transitionDuration: const Duration(seconds: 2),
+        transitionsBuilder: (context, anim1, anim2, child) {
+          return new FadeTransition(
+            child: child,
+            opacity: anim1,
+          );
+        }));
+}
 
 Widget _espectacularApp(){
   return Container(
@@ -43,7 +73,6 @@ Widget _procesandoGif(){
               );
 }
 
-
 Widget _labelProcess(){
   return Container(
                 height: 100,
@@ -57,7 +86,4 @@ Widget _labelProcess(){
                     ),)),
               );
 }
-
-
-
 }

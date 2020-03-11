@@ -23,11 +23,8 @@ String _result;
 @override
 void initState() {
            loadAsyncData(widget.foto).then((result) {
-            // If we need to rebuild the widget with the resulting data,
-            // make sure to use `setState`
             setState(() {
                 _result = result;
-                  
             });
         });
 }
@@ -38,7 +35,7 @@ Widget build(BuildContext context) {
             // This is what we show while we're loading
            print(_result);
            if(_result.compareTo("error")==0){
-              return new ErrorPage();
+              return new ErrorPage(iderror: 0,);
            }else{
              Vino wine_found = Vino.fromJson(json.decode(_result));
              print(wine_found.nombre);
@@ -47,7 +44,7 @@ Widget build(BuildContext context) {
            } 
         }
         // Mientras no se obtenga respuesta la aplicación mostrara la interfaz gráfica de procesando
-        return new ProcesandoPage();
+        return new ProcesandoPage(idprocess: 0,);
   }
 
   loadAsyncData(File foto) async{
@@ -63,7 +60,7 @@ Widget build(BuildContext context) {
      //Vino wine_found = Vino.fromJson(json.decode(respStr));
      //Verificar que la petición se realizó correctamente al servidor     
      if (response.statusCode == 200) {
-        //Si la petición tuvo una respuesta la 
+        //Si la petición tuvo una respuesta satisfactoria del servidor 
         //Vino wine_found = Vino.fromJson(json.decode(respStr));
         //return wine_found;
         return respStr;

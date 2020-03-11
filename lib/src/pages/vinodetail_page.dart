@@ -67,19 +67,39 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
 
   Widget _mostrarImagen(){
     //print(Uris[vino.identificador]);
-    return 
-    FadeInImage(
-            image: NetworkImage(Uris[widget.vino.identificador]),
-            placeholder:AssetImage('assets/loading-gear-3.gif',),
-            height: 300.0,
-            width: 200,
-            fit: BoxFit.contain,
-            
-          ); 
+    return Container( 
+
+                                height: 300,
+                                width: 150,
+                                padding: EdgeInsets.all(15.0) ,
+                                margin: EdgeInsets.symmetric(horizontal: 5.0),
+                                decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(width: 6.0, color: Colors.deepOrangeAccent),
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(30.0) //         
+                                      ),),
+                                child: Image.network(Uris[widget.vino.identificador], fit: BoxFit.contain,),
+                                //Text('text $i', style: TextStyle(fontSize: 16.0),)
+                                
+      ); 
+    
+    
+    
+    
+    /*FadeInImage(
+                        image: NetworkImage(Uris[widget.vino.identificador]),
+                        placeholder:AssetImage('assets/loading-gear-3.gif',),
+                        fit: BoxFit.contain,
+                        height: 330.0,
+                        width: 250,
+                  );*/
+                
   }
 
   Widget _mostrarNombre(){
     return Text('${widget.vino.nombre}',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -105,7 +125,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
           //vinoProvider.obtenerRecomendaciones(widget.id);
       },
       child: Text("Ver similares",
-             style: TextStyle(
+             style: TextStyle(      
                color: Colors.white,
                fontWeight: FontWeight.bold,
                fontSize: 20
@@ -115,111 +135,194 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
   }
 
   Widget _desplegarInformacion(){
+    //Eliminar corchetes de la lista para fines de visualización
+    String s = widget.vino.variedad.join(', ');
+    String s2 = widget.vino.aroma.join(', ');
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text("VARIEDAD:",
+          Padding(
+            padding: EdgeInsets.only(left:25.0,bottom: 10.0),
+            child: Text("VARIEDAD:",
              style: TextStyle(
                color: Colors.deepOrangeAccent,
                fontSize: 20,
-             ),),
-         Text("${widget.vino.variedad} \n", //VARIEDAD DEL VINO
+             ),
+             ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:30.0),
+            child: Text("${s} \n", //VARIEDAD DEL VINO
              style: TextStyle(
                color: Colors.white,
                fontSize: 20
-             ),),
-          Text("GRADO ALCOHÓLICO:",
+             ),
+             ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:25.0, bottom: 10.0),
+            child: Text("GRADO ALCOHÓLICO:",
              style: TextStyle(
                color: Colors.deepOrangeAccent,
                fontSize: 20
-             ),),
-        Text("${widget.vino.porcentaje_alcohol}\n", //GRADO ALCOHOLICO
+             ),
+             ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:30.0),
+            child: Text("${widget.vino.porcentaje_alcohol}\n", //GRADO ALCOHOLICO
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
              ),),
-        Text("PAÍS:",
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:25.0,bottom: 10.0),
+            child: Text("PAÍS:",
              style: TextStyle(
                color: Colors.deepOrangeAccent,
                fontSize: 20
              ),),
-        Text("${widget.vino.pais} \n", //PAIS
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:30.0),
+            child: Text("${widget.vino.pais} \n", //PAIS
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
              ),),
-        Text("REGIÓN:",
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:25.0,bottom: 10.0),
+            child: Text("REGIÓN:",
              style: TextStyle(
                color: Colors.deepOrangeAccent,
                fontSize: 20
              ),),
-        Text("${widget.vino.region} \n", //REGIÓN
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:30.0),
+            child: Text("${widget.vino.region} \n", //REGIÓN
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
              ),),
-        Text("GUARDA:",
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:25.0,bottom: 10.0),
+            child: Text("GUARDA:",
              style: TextStyle(
                color: Colors.deepOrangeAccent,
                fontSize: 20
              ),),
-        Text("${widget.vino.guarda} \n",
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:30.0),
+            child:  Text("${widget.vino.guarda} \n",
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
              ),),
-        Text("TEMPERATURA DE CONSUMO:",
+          ),
+          
+          Padding(
+            padding: EdgeInsets.only(left:25.0,bottom: 10.0),
+            child: Text("TEMPERATURA DE CONSUMO:",
              style: TextStyle(
                color: Colors.deepOrangeAccent,
                fontSize: 20
              ),),
-        Text("${widget.vino.temperatura_consumo} °C\n",
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:30.0),
+            child: Text("${widget.vino.temperatura_consumo} °C\n",
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
              ),),
-        Text("COLOR:",
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:25.0,bottom: 10.0),
+            child: Text("COLOR:",
              style: TextStyle(
                color: Colors.deepOrangeAccent,
                fontSize: 20
-        ),),
-        Text("${widget.vino.color} \n",
+            ),),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:30.0),
+            child: Text("${widget.vino.color} \n",
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
              ),),
-        Text("NOTAS AROMÁTICAS:",
-             style: TextStyle(
-               color: Colors.deepOrangeAccent,
-               fontSize: 20
-             ),),
-        Text("${widget.vino.aroma} \n",
-              style: TextStyle(
-               color: Colors.white,
-               fontSize: 20
-             ),),
-        Text("SABOR:",
-             style: TextStyle(
-               color: Colors.deepOrangeAccent,
-               fontSize: 20
-             ),),
-        Text("${widget.vino.sabor} \n",
-              style: TextStyle(
-               color: Colors.white,
-               fontSize: 20
-             ),),
-        Text("MARIDAJE:",
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:25.0,bottom: 10.0),
+            child: Text("NOTAS AROMÁTICAS:",
              style: TextStyle(
                color: Colors.deepOrangeAccent,
                fontSize: 20
              ),),
-        Text("${widget.vino.maridaje} \n",
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:30.0),
+            child: Text("${s2} \n",
               style: TextStyle(
                color: Colors.white,
                fontSize: 20
-             ),)
+             ),),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:25.0, bottom: 10.0),
+            child: Text("SABOR:",
+             style: TextStyle(
+               color: Colors.deepOrangeAccent,
+               fontSize: 20
+             ),),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:30.0),
+            child: Text("${widget.vino.sabor} \n",
+              style: TextStyle(
+               color: Colors.white,
+               fontSize: 20
+             ),),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:25.0, bottom: 10.0),
+            child: Text("MARIDAJE:",
+             style: TextStyle(
+               color: Colors.deepOrangeAccent,
+               fontSize: 20
+             ),),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:30.0, right: 30.0),
+            child: Text("${widget.vino.maridaje} \n",
+              style: TextStyle(
+               color: Colors.white,
+               fontSize: 20
+             ),),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:25.0, bottom: 10.0),
+            child: Text("PRECIO:",
+             style: TextStyle(
+               color: Colors.deepOrangeAccent,
+               fontSize: 20
+             ),),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left:30.0),
+            child: Text("\$${widget.vino.precio} \n",
+              style: TextStyle(
+               color: Colors.white,
+               fontSize: 20
+             ),),
+          ),
       ],
-    );
+      );
   }
 
   Widget _crearBotonesFinales(BuildContext context){

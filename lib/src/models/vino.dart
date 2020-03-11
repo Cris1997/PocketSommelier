@@ -21,6 +21,7 @@ class Vino {
     String sabor;
     String maridaje;
     String name_image;
+    int precio;
     /*Constructor de la clase*/
     Vino({this.identificador, 
     this.nombre, 
@@ -34,7 +35,8 @@ class Vino {
     this.aroma, 
     this.sabor,
     this.maridaje,
-    this.name_image
+    this.name_image,
+    this.precio
     });
    /*
    Este método funciona para convertir los datos JSON en 
@@ -54,7 +56,8 @@ class Vino {
       aroma: json['aroma'],
       sabor: json['sabor'],
       maridaje: json['maridaje'],
-      name_image: json['name_image']
+     // name_image: json['name_image'],
+      precio: json['precio']
       );
    }
 }

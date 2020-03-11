@@ -38,7 +38,7 @@ String _result;
             // This is what we show while we're loading
            //print(_result);
            if(_result.compareTo("error")==0){
-              return new ErrorPage();
+              return new ErrorPage(iderror: 1,);
            }else{
                   //Decodificar los datos a JSON y generar la lista para mostrar en el carrusel
                   var jsonfiles  = json.decode(_result);
@@ -53,7 +53,7 @@ String _result;
            } 
         }
         // Mientras no se obtenga respuesta la aplicación mostrara la interfaz gráfica de procesando
-        return new ProcesandoPage();
+        return new ProcesandoPage(idprocess: 1,);
     }
 
   enviarFotoOCR(File foto) async{

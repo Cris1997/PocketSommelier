@@ -5,6 +5,9 @@ import 'package:pocket_sommelier/src/pages/inicio_page.dart';
 import 'package:flutter/material.dart';
 
 class ErrorPage extends StatelessWidget {
+
+   int iderror;//Identificaro del vino proveniente de la pantalla anterior
+   ErrorPage({this.iderror});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,14 +29,14 @@ class ErrorPage extends StatelessWidget {
           ),),
           SizedBox(height: 30.0,),
           Image(
-            height: 300,
-            width: 200,
+            height: 150,
+            width: 100,
             image: AssetImage('assets/not.png'),
           ),
           SizedBox(height: 30.0,),
           Text("No se encontraron coincidencias",style: TextStyle(
             color: Colors.black,
-            fontSize: 24,
+            fontSize: 20,
             fontWeight: FontWeight.bold
           ),),
           SizedBox(height: 30.0,),
@@ -47,17 +50,17 @@ class ErrorPage extends StatelessWidget {
   Widget _botonCatalogo(BuildContext context ){
 
     return SizedBox(
-        width: 260, 
-        height: 60,// specific value
+        width: 250, 
+        height: 50,// specific value
         child: RaisedButton(
         color: Colors.black,
         hoverColor: Colors.white,
         focusColor: Colors.white,
         highlightColor: Colors.white,
         splashColor: Colors.white,
-        child: Text("Conocer otros vinos",
+        child: Text("Conoce otros vinos",
               style: TextStyle(
-                    fontSize: 20.0,
+                    fontSize: 16.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.white
               ),),
@@ -75,20 +78,27 @@ class ErrorPage extends StatelessWidget {
 
   Widget _botonFoto(BuildContext context){
     return SizedBox(
-          width: 260,
-          height: 60,
+          width: 250,
+          height: 50,
           child: RaisedButton(
           color: Colors.black,
           highlightColor: Colors.white,
           splashColor: Colors.white,
           child: Text("Volver a tomar fotografía",
                   style: TextStyle(
-                    fontSize: 20.0,
+                    fontSize: 16.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.white
                   ),),
           onPressed: (){
-            Navigator.pushNamed(context, "/foto_etiqueta");
+            if(iderror == 0){
+              //El error se presento cuando no se identifico la etiqueta del vinno
+              Navigator.pushNamed(context, "/foto_etiqueta");
+
+            }else{
+              //El error se presento cuando no encontro algo en la carta de vinos
+              Navigator.pushNamed(context, "/foto_carta");
+            }
           }
     )
     );
