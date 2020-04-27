@@ -1,4 +1,6 @@
 
+import 'package:pocket_sommelier/src/pages/camara_listapage.dart';
+import 'package:pocket_sommelier/src/pages/camara_page.dart';
 import 'package:pocket_sommelier/src/pages/catalogo_page.dart';
 import 'package:pocket_sommelier/src/pages/inicio_page.dart';
 
@@ -6,8 +8,8 @@ import 'package:flutter/material.dart';
 
 class ErrorPage extends StatelessWidget {
 
-   int iderror;//Identificaro del vino proveniente de la pantalla anterior
-   ErrorPage({this.iderror});
+  int iderror;//Identificaro del vino proveniente de la pantalla anterior
+  ErrorPage({this.iderror});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,7 +70,7 @@ class ErrorPage extends StatelessWidget {
           Navigator.push(context,
                           MaterialPageRoute(
                             builder: (context) => CatalogoVinosPage(vinoid: 0),
-                           ),
+                          ),
                       );
         }
     )
@@ -93,11 +95,13 @@ class ErrorPage extends StatelessWidget {
           onPressed: (){
             if(iderror == 0){
               //El error se presento cuando no se identifico la etiqueta del vinno
-              Navigator.pushNamed(context, "/foto_etiqueta");
-
+              Navigator.push(context,MaterialPageRoute(builder: (context) => CamaraPage(),),);
+              //Navigator.pushNamed(context, "/foto_etiqueta");
+              
             }else{
               //El error se presento cuando no encontro algo en la carta de vinos
-              Navigator.pushNamed(context, "/foto_carta");
+              Navigator.push(context,MaterialPageRoute(builder: (context) => CamaraListaPage(),),);
+              //Navigator.pushNamed(context, "/foto_carta");
             }
           }
     )

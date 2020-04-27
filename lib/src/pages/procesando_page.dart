@@ -16,7 +16,7 @@ class _ProcesandoPageState extends State<ProcesandoPage> {
    @override
   initState() {
     super.initState();
-    new Timer(const Duration(seconds: 10), onClose);
+    new Timer(const Duration(seconds: 60), onClose);
   }
   
   @override

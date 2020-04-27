@@ -1,10 +1,16 @@
 import 'dart:io';
 import  'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:pocket_sommelier/src/pages/otro.dart';
+import 'package:pocket_sommelier/src/pages/camara_page.dart';
 
-class EtiquetaVinoPage extends StatelessWidget {
-  File foto;
+class EtiquetaVinoPage extends StatefulWidget {
+  @override
+  _EtiquetaVinoPageState createState() => _EtiquetaVinoPageState();
+}
+
+class _EtiquetaVinoPageState extends State<EtiquetaVinoPage> {
+  File _foto;
+
   @override
   Widget build(BuildContext context) {
     //_procesarImagen(ImageSource.camera);
@@ -57,8 +63,8 @@ class EtiquetaVinoPage extends StatelessWidget {
                                                   )
                                           ),
                               onPressed:(){
-                          _tomarFoto(context);
-                          },
+                                  Navigator.push(context, new MaterialPageRoute(builder: (context) => new CamaraPage()));
+                              },
                         ),
                   FlatButton(
                               color: Colors.deepOrangeAccent,
@@ -91,58 +97,4 @@ class EtiquetaVinoPage extends StatelessWidget {
         
     );
   }
-
-  _tomarFoto(BuildContext context) async {
-      _procesarImagen(ImageSource.camera,context);
-  }
-
-  _procesarImagen(ImageSource origen, BuildContext context) async  {
-
-      foto = await ImagePicker.pickImage(
-          source: origen
-      );
-
-      if( foto != null ){
-        Navigator.push(context, new MaterialPageRoute(builder: (context) => new IntentoPage(foto:foto)));
-      }
-  }
-
-  /*  uploadImageToServer(File foto, BuildContext context) async {
-     //print("Conectando con el servidor....");
-
-     var stream  = new http.ByteStream(DelegatingStream.typed(foto.openRead()));
-     var length = await foto.length();
-     //print(length);
-     var uri = Uri.parse('http://${IP}/predict');
-     //print(uri);
-     //print("conexion exitosa");
-     var request = new http.MultipartRequest('POST', uri);
-     var multipartFile =  new http.MultipartFile('file', stream, length, filename: Path.basename(foto.path));
-     request.files.add(multipartFile);
-     var response =  await request.send();
-     //print(response);
-     final respStr = await response.stream.bytesToString();
-     Vino wine_found = Vino.fromJson(json.decode(respStr));
-     print(wine_found.maridaje);
-     /*
-     final respStr = await response.stream.bytesToString();
-     if (response.statusCode == 200) {
-           int d = respStr.compareTo("error");
-           if(d < 0){
-              Navigator.pushNamed(context, '/infovino',arguments: int.parse(respStr));
-           }else{
-              Navigator.pushNamed(context, '/error');
-           } 
-      } else {
-         Navigator.pushNamed(context, '/error');
-        // If that response was not OK, throw an error.
-        //throw Exception('Fallo al realizar la peticion al servidor');
-      }
-      */
-
-
-
-     //print(response.statusCode);
-  }*/
-
 }

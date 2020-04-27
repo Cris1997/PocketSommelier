@@ -72,7 +72,7 @@ class _CatalogoVinosPageState extends State<CatalogoVinosPage> {
                       al que seleccionó el usuario*/
                       Navigator.push(context,
                           MaterialPageRoute(
-                            builder: (context) => VinoDetailPage(vino:listaVinos[_current]),
+                            builder: (context) => VinoDetailPage(vino:listaVinos[_current],flag: 1,),
                            ),
                       );
                     },

@@ -58,7 +58,7 @@ class _CatalogoOCRVinosPageState extends State<CatalogoOCRVinosPage> {
                       //print("El usuario selecciona:${listaVinos[_current].identificador}");
                       Navigator.push(context,
                           MaterialPageRoute(
-                            builder: (context) => VinoDetailPage(vino:widget.vinos[_current]),
+                            builder: (context) => VinoDetailPage(vino:widget.vinos[_current],flag: 1,),
                            ),
                       );
                     },

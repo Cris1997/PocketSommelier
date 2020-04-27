@@ -2,8 +2,22 @@
 import 'package:flutter/material.dart';
 
 
-final String IP = "10.100.79.93:4000";
+final String IP = "192.168.1.70:4000";
 
+final Map<String, String> alertas = {
+"Variedad":"Señala la clase de uva de la que está elaborada el vino. Actualmente existen más de 10,000 variedades, de las cuales entre las más famosas encontramos Cabernet Sauvignon, Merlot, Carmenere, entre otras.",
+"Grado alcohólico":"Indica la cantidad alcohólica que posee un vino, entre más alta sea la graduación menor presencia de azúcar tiene el vino.",
+"Pais":"Entidad de donde proviene el vino",
+"Región":"Dentro del país de donde proviene el vino, existen regiones vitinícolas donde se produce el vino.",
+"Guarda":"Algunos vinos suelen ser resguardados antes de salir a la venta, está relacionado con la uva y los aromas del vino cambian si hubo una guarda.",
+"Temp. de consumo":"Indica la temperatura adecuada a la que el vino se disfruta mejor solo o con los alimentos.",
+"Color":"Visiblemente el vino puede ser percibido como blanco, tinto y rosado.",
+"Aromas":"Están asociadas a las propiedades que tiene la variedad de la que está hecho el vino.",
+"Sabor":"De acuerdo con la cantidad de azúcar que tiene un vino, puede apreciarse un sensación más suave en la lengua si el vino es dulce. Ocurre lo contrario con los vinos secos, que la mayoría de los casos van mejor con la comida. ",
+"Maridaje":"Es la variedad de alimentos con los que el vino puede ser degustado de la mejor manera.",
+"Precio aproximado":"El precio mostrado aquí se obtuvo de un promedio de 3 comercios que ofrecen el producto en la Ciudad de México.",
+
+};
 
 final Map<int,String> Uris = {
 1:"https://res.cloudinary.com/escom/image/upload/v1580838434/catalogo/1.jpg",

@@ -37,9 +37,9 @@ String _result;
         if (_result != null) {
             // This is what we show while we're loading
            //print(_result);
-           if(_result.compareTo("error")==0){
+          if(_result.compareTo("error")==0){
               return new ErrorPage(iderror: 1,);
-           }else{
+          }else{
                   //Decodificar los datos a JSON y generar la lista para mostrar en el carrusel
                   var jsonfiles  = json.decode(_result);
                   List<Vino> vinosCarta = new List(); 
@@ -50,7 +50,7 @@ String _result;
                       vinosCarta.add(temporal);
                   }
                   return new CatalogoOCRVinosPage(vinos: vinosCarta);
-           } 
+          } 
         }
         // Mientras no se obtenga respuesta la aplicación mostrara la interfaz gráfica de procesando
         return new ProcesandoPage(idprocess: 1,);
@@ -58,43 +58,18 @@ String _result;
 
   enviarFotoOCR(File foto) async{
      //print("HOLA");
-     var stream  = new http.ByteStream(DelegatingStream.typed(foto.openRead()));
-     var length = await foto.length();
-     var uri = Uri.parse('http://${IP}/ocr');
-     var request = new http.MultipartRequest('POST', uri);
-     var multipartFile =  new http.MultipartFile('file', stream, length, filename: Path.basename(foto.path));
-     request.files.add(multipartFile);
-     var response =  await request.send();
-     final respStr = await response.stream.bytesToString();
-     if (response.statusCode == 200) {
-        return respStr;
-     }else{
-        return "error";
-     }
+      var stream  = new http.ByteStream(DelegatingStream.typed(foto.openRead()));
+      var length = await foto.length();
+      var uri = Uri.parse('http://${IP}/ocr');
+      var request = new http.MultipartRequest('POST', uri);
+      var multipartFile =  new http.MultipartFile('file', stream, length, filename: Path.basename(foto.path));
+      request.files.add(multipartFile);
+      var response =  await request.send();
+      final respStr = await response.stream.bytesToString();
+      if (response.statusCode == 200) {
+          return respStr;
+      }else{
+          return "error";
+      }
   } 
-  /*sendImagetoServer(File foto) async{
-
-     var stream  = new http.ByteStream(DelegatingStream.typed(foto.openRead()));
-     var length = await foto.length();
-     var uri = Uri.parse('http://${IP}/ocr');
-     var request = new http.MultipartRequest('POST', uri);
-     var multipartFile =  new http.MultipartFile('file', stream, length, filename: Path.basename(foto.path));
-     request.files.add(multipartFile);
-     var response =  await request.send().timeout(Duration(seconds: 8)).then(_merror());
-          final respStr = await response.stream.bytesToString();
-          if (response.statusCode == 200) {
-                return respStr;
-           } else {
-              return respStr;
-           }
-          
-       }
-     
-  FutureOr Function(http.StreamedResponse value) _merror() {
-          print("Servidor no disponible");
-       }  */
-
-
-
-
 }

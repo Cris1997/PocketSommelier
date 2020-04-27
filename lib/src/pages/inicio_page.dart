@@ -70,90 +70,6 @@ class _InicioPageState extends State<InicioPage> {
         ],)
     );
   }
-
- /*void _mostrarAlert(BuildContext context) {
-
-    showDialog(
-      context: context,
-      barrierDismissible: true,
-      builder: (context){
-        return AlertDialog(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-              //title: Text('Informacion'),
-              content : Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Text('Esta aplicación solamente puede identificar vinos de la marca Concha y Toro',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    //fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-                  ),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                        FlatButton(
-                              color: Colors.deepOrangeAccent,
-                              focusColor: Colors.black,
-                              shape: RoundedRectangleBorder(
-                                  side: BorderSide(
-                                          color: Colors.deepOrangeAccent,
-                                          width: 1,
-                                          style: BorderStyle.solid
-                                      ), 
-                                  borderRadius: BorderRadius.circular(30)
-                              ),
-                              child: Text('Cancelar', 
-                                          style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold
-                                                  )
-                                          ),
-                              onPressed: ()=>Navigator.of(context).pop(),
-                        ),
-                        FlatButton(
-                            color:  Colors.deepOrangeAccent,
-                            focusColor: Colors.black,
-                            shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                  side: BorderSide(
-                                        color: Colors.deepOrangeAccent,
-                                        width: 1,
-                                        style: BorderStyle.solid
-                                  )
-                            ),
-                            child: Text(
-                                      'Continuar', 
-                                      style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold
-                                              )
-                                              ),
-                            
-                        onPressed: _tomarFoto,
-                            //Navigator.of(context).pop();
-                        ),
-                    ],)
-                  //FlutterLogo( size:100.0)
-                ],
-              ),
-          );
-      }
-
-    );
-
-  } 
-
-    _tomarFoto() async {
-      _procesarImagen(ImageSource.camera);
-  }
-
-    _seleccionarFoto() async {
-      _procesarImagen(ImageSource.gallery);
-  }
-  */
   //Métodos para mostrar organizadamente los elementos de la interfaz gráfica
   Widget _mostrarLogo(){
       return Image(
@@ -162,9 +78,6 @@ class _InicioPageState extends State<InicioPage> {
                   fit: BoxFit.cover,
               );
   }
-
-
-
   Widget _botonEtiqueta(){
 
   return RaisedButton(

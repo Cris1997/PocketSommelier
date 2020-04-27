@@ -1,13 +1,13 @@
 import 'dart:io';
 import  'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:pocket_sommelier/src/pages/camara_listapage.dart';
 import 'package:pocket_sommelier/src/pages/listavino_page.dart';
 
 class CartaVinosPage extends StatelessWidget {
   File foto; //Almacena la foto que toma el usuario desde su celular
   @override
   Widget build(BuildContext context) {
-    //_procesarImagen(ImageSource.camera);
     return Scaffold(
         backgroundColor: Colors.black,//Fondo color negro
         body: Center(//Alineación del Widget
@@ -25,7 +25,6 @@ class CartaVinosPage extends StatelessWidget {
               ),
               height: 200,
               width: 300,
-              //color: Colors.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -56,7 +55,7 @@ class CartaVinosPage extends StatelessWidget {
                                                   )
                                           ),
                               onPressed:(){
-                              _tomarFotoLista(context);
+                                Navigator.push(context, new MaterialPageRoute(builder: (context) => new CamaraListaPage()));
                           },
                         )
                     ],
@@ -70,21 +69,5 @@ class CartaVinosPage extends StatelessWidget {
         )
         
     );
-  }
-
-
-  _tomarFotoLista(BuildContext context) async {
-      _procesarImagenOCR(ImageSource.camera,context);
-  }
-
-  _procesarImagenOCR(ImageSource origen, BuildContext context) async  {
-      File foto;
-      foto = await ImagePicker.pickImage(
-          source: origen
-      );
-      //La aplicación espera a que el usuario tome una fotografía para poder lanzar una petición al servidor
-      if( foto != null ){
-        Navigator.push(context, new MaterialPageRoute(builder: (context) => new ListaVinosPage(foto:foto)));
-      }
   }
 }
