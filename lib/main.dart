@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       //Pantalla que muestra al usuario que se está procesando una fotografía
       '/procesando': (context) => ProcesandoPage(),
     },
-   );
+    );
   }
 }
 

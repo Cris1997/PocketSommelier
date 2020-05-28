@@ -38,8 +38,6 @@ Widget build(BuildContext context) {
               return new ErrorPage(iderror: 0,);
           }else{
             Vino wine_found = Vino.fromJson(json.decode(_result));
-            //print(wine_found.nombre);
-             //return new VinoDetailPage2(id:28 );
             return new VinoDetailPage(vino: wine_found, flag: 0,);
           } 
         }
@@ -56,16 +54,11 @@ Widget build(BuildContext context) {
     request.files.add(multipartFile);
     var response =  await request.send();
     final respStr = await response.stream.bytesToString();
-    //Vino wine_found = Vino.fromJson(json.decode(respStr));
     //Verificar que la petición se realizó correctamente al servidor     
     if (response.statusCode == 200) {
-      //Si la petición tuvo una respuesta satisfactoria del servidor 
-      //Vino wine_found = Vino.fromJson(json.decode(respStr));
-      //return wine_found;
       return respStr;
     }else{
       return "error";
-      //Navigator.pushNamed(context, '/error');
     }
   } 
 }

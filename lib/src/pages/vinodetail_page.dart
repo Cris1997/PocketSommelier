@@ -270,7 +270,7 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
           ),
           Padding(
             padding: EdgeInsets.only(left:30.0),
-            child:  Text("${widget.vino.guarda} \n",
+            child:  Text("${widget.vino.guarda} meses\n",
               style: TextStyle(
                color: Colors.white,
                fontSize: tamaniofont

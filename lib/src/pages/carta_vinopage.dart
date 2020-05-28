@@ -35,7 +35,7 @@ class CartaVinosPage extends StatelessWidget {
                   ),
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                         FlatButton(
                               color: Colors.deepOrangeAccent,
@@ -56,6 +56,27 @@ class CartaVinosPage extends StatelessWidget {
                                           ),
                               onPressed:(){
                                 Navigator.push(context, new MaterialPageRoute(builder: (context) => new CamaraListaPage()));
+                          },
+                        ),
+                        FlatButton(
+                              color: Colors.deepOrangeAccent,
+                              focusColor: Colors.black,
+                              shape: RoundedRectangleBorder(
+                                  side: BorderSide(
+                                          color: Colors.deepOrangeAccent,
+                                          width: 1,
+                                          style: BorderStyle.solid
+                                      ), 
+                                  borderRadius: BorderRadius.circular(30)
+                              ),
+                              child: Text('Cancelar', 
+                                          style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold
+                                                  )
+                                          ),
+                              onPressed:(){
+                                Navigator.pop(context);
                           },
                         )
                     ],

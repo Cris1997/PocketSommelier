@@ -14,7 +14,7 @@ class Vino {
     double porcentaje_alcohol;
     String pais;
     String region;
-    String guarda;
+    int guarda;
     String temperatura_consumo;
     String color;
     List<dynamic> aroma;

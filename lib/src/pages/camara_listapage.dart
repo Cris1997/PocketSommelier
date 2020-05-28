@@ -28,6 +28,8 @@ class _CamaraListaPageState extends State<CamaraListaPage> {
       setState(() {
         if( foto != null ){
           Navigator.push(context, new MaterialPageRoute(builder: (context) => new ListaVinosPage(foto:foto)));
+        }else{
+          Navigator.pushNamed(context, '/inicio');
         }
       });
   }

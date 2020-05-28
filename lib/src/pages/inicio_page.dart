@@ -110,8 +110,8 @@ Widget _botonLista(){
         child: Text(
                 "Lista de vinos",
                 style: TextStyle( 
-                   fontWeight: FontWeight.bold,
-                   fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14.0,
                 ),
                 ),
         color: Colors.deepOrangeAccent,
@@ -146,7 +146,7 @@ Widget _botonConoce(){
                   Navigator.push(context,
                           MaterialPageRoute(
                             builder: (context) => CatalogoVinosPage(vinoid: 0),
-                           ),
+                          ),
                       );
                 } 
               );
