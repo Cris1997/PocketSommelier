@@ -13,7 +13,6 @@ class _EtiquetaVinoPageState extends State<EtiquetaVinoPage> {
 
   @override
   Widget build(BuildContext context) {
-    //_procesarImagen(ImageSource.camera);
     return Scaffold(
         backgroundColor: Colors.black,
         body: Center(

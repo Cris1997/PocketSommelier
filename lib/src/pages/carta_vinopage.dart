@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:pocket_sommelier/src/pages/camara_listapage.dart';
 import 'package:pocket_sommelier/src/pages/listavino_page.dart';
 
+/*Esta pantalla muestra la notificacion de enfocar la camara a la lista de vinos*/
 class CartaVinosPage extends StatelessWidget {
   File foto; //Almacena la foto que toma el usuario desde su celular
   @override

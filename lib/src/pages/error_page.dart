@@ -96,12 +96,10 @@ class ErrorPage extends StatelessWidget {
             if(iderror == 0){
               //El error se presento cuando no se identifico la etiqueta del vinno
               Navigator.push(context,MaterialPageRoute(builder: (context) => CamaraPage(),),);
-              //Navigator.pushNamed(context, "/foto_etiqueta");
               
             }else{
               //El error se presento cuando no encontro algo en la carta de vinos
               Navigator.push(context,MaterialPageRoute(builder: (context) => CamaraListaPage(),),);
-              //Navigator.pushNamed(context, "/foto_carta");
             }
           }
     )

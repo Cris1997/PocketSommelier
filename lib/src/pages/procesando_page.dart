@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'error_page.dart';
 
 class ProcesandoPage extends StatefulWidget {
-  int idprocess;//Identificaro del vino proveniente de la pantalla anterior
+  int idprocess;//Identificador del vino proveniente de la pantalla anterior
   ProcesandoPage({this.idprocess});
   @override
   _ProcesandoPageState createState() => _ProcesandoPageState();
@@ -13,7 +13,7 @@ class ProcesandoPage extends StatefulWidget {
 
 class _ProcesandoPageState extends State<ProcesandoPage> {
 
-   @override
+  @override
   initState() {
     super.initState();
     new Timer(const Duration(seconds: 60), onClose);
@@ -28,10 +28,10 @@ class _ProcesandoPageState extends State<ProcesandoPage> {
       body: Center(
         child: Column(
           children: <Widget>[
-             _espectacularApp(),
-             _procesandoGif(),
-             _labelProcess(),
-           ],
+              _espectacularApp(),
+              _procesandoGif(),
+              _labelProcess(),
+            ],
           ),
       ),
     );

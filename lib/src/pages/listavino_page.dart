@@ -12,10 +12,12 @@ import 'package:async/async.dart';
 import 'package:path/path.dart' as Path;
 import 'package:pocket_sommelier/src/utils/mapa.dart';
 
+/*Esta clase funcionac como un intermedio para enviar la foto de la lista de vinos
+y recibir la respuesta del servidor */
 
 class ListaVinosPage extends StatefulWidget {
   File foto;
-  ListaVinosPage({this.foto});
+  ListaVinosPage({this.foto}); //Recibe la foto
 
   _ListaVinosPage createState() => _ListaVinosPage();
 }
@@ -26,8 +28,7 @@ String _result;
     void initState() {
             enviarFotoOCR(widget.foto).then((result) {
             setState(() {
-                _result = result;
-                  
+                _result = result; 
             });
         });
     }
@@ -35,8 +36,7 @@ String _result;
   @override
   Widget build(BuildContext context) {
         if (_result != null) {
-            // This is what we show while we're loading
-           //print(_result);
+            //Esto es lo mostrado mientras carga la petición
           if(_result.compareTo("error")==0){
               return new ErrorPage(iderror: 1,);
           }else{
@@ -45,8 +45,6 @@ String _result;
                   List<Vino> vinosCarta = new List(); 
                   for (var data in jsonfiles) {
                       final temporal = Vino.fromJson(data);
-                      //print(temporal.identificador);
-                      //print(temporal.nombre);
                       vinosCarta.add(temporal);
                   }
                   return new CatalogoOCRVinosPage(vinos: vinosCarta);
@@ -56,8 +54,8 @@ String _result;
         return new ProcesandoPage(idprocess: 1,);
     }
 
+  /*Este metodo convoca al API para enviar la fotografia de la lista de vinos */
   enviarFotoOCR(File foto) async{
-     //print("HOLA");
       var stream  = new http.ByteStream(DelegatingStream.typed(foto.openRead()));
       var length = await foto.length();
       var uri = Uri.parse('http://${IP}/ocr');

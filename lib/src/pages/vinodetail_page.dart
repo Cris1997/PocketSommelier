@@ -15,9 +15,7 @@ class VinoDetailPage extends StatefulWidget{
 }
 
 class _VinoDetailPageState extends State<VinoDetailPage> {
-  //Vino  vino = new Vino(); //Guardar los datos del vino que se le solicita a la API
   final vinoProvider = new VinoProvider();// Clase para hacer las peticionnes al servidor
-  //int id ;//Identificador del vino que ha de solicitarse al servidor
   @override
   void initState() {
     super.initState();
@@ -46,14 +44,11 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
                       _crearBotonRecomendacion(),
                       SizedBox(height: 15),
                       _desplegarInformacion(context),
-                       SizedBox(height: 15),
+                      SizedBox(height: 15),
                       _crearBotonesFinales(context),
                     ],
                   ),
-             );
-          /*else { 
-            return Center(child: CircularProgressIndicator());
-          }*/
+            );
       }
   
   Widget _mostrarLetrero(){
@@ -81,21 +76,8 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
                                         Radius.circular(30.0) //         
                                       ),),
                                 child: Image.network(Uris[widget.vino.identificador], fit: BoxFit.contain,),
-                                //Text('text $i', style: TextStyle(fontSize: 16.0),)
                                 
       ); 
-    
-    
-    
-    
-    /*FadeInImage(
-                        image: NetworkImage(Uris[widget.vino.identificador]),
-                        placeholder:AssetImage('assets/loading-gear-3.gif',),
-                        fit: BoxFit.contain,
-                        height: 330.0,
-                        width: 250,
-                  );*/
-                
   }
 
   Widget _mostrarNombre(){
@@ -121,16 +103,16 @@ class _VinoDetailPageState extends State<VinoDetailPage> {
           Navigator.push(context,
                           MaterialPageRoute(
                             builder: (context) => CatalogoVinosPage(vinoid:widget.vino.identificador),
-                           ),
+                          ),
           );
           //vinoProvider.obtenerRecomendaciones(widget.id);
       },
       child: Text("Ver similares",
-             style: TextStyle(      
-               color: Colors.white,
-               fontWeight: FontWeight.bold,
-               fontSize: 16
-             ),
+              style: TextStyle(      
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 16
+            ),
       ),
     );
   }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pocket_sommelier/src/pages/envia_foto.dart';
   
+/*Clase para tomar la fotografía a la botella de vino */
 class CamaraPage extends StatefulWidget {
   @override
   _CamaraPageState createState() => _CamaraPageState();

@@ -1,9 +1,10 @@
 
 import 'package:flutter/material.dart';
 
-
+//Direccion del servidor donnde se aloja el servicio
 final String IP = "192.168.1.70:4000";
 
+//Mensajes que aparecen como ayuda para orientar al usuario si no conoce alguna propiedad del vino
 final Map<String, String> alertas = {
 "Variedad":"Señala la clase de uva de la que está elaborada el vino. Actualmente existen más de 10,000 variedades, de las cuales entre las más famosas encontramos Cabernet Sauvignon, Merlot, Carmenere, entre otras.",
 "Grado alcohólico":"Indica la cantidad alcohólica que posee un vino, entre más alta sea la graduación menor presencia de azúcar tiene el vino.",
@@ -19,6 +20,7 @@ final Map<String, String> alertas = {
 
 };
 
+//Rutas del API donde se encuentran las imágenes de los vinos que se despliegan en el carrousel
 final Map<int,String> Uris = {
 1:"https://res.cloudinary.com/escom/image/upload/v1580838434/catalogo/1.jpg",
 2:"https://res.cloudinary.com/escom/image/upload/v1580838495/catalogo/2.jpg",

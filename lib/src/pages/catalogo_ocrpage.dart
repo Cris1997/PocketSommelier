@@ -6,9 +6,9 @@ import 'package:pocket_sommelier/src/pages/vinodetail_page.dart';
 import 'package:pocket_sommelier/src/utils/mapa.dart';
 
 class CatalogoOCRVinosPage extends StatefulWidget {
-   List<Vino> vinos;
-   CatalogoOCRVinosPage({this.vinos});
-   @override
+  List<Vino> vinos;
+  CatalogoOCRVinosPage({this.vinos});
+  @override
   _CatalogoOCRVinosPageState createState() => _CatalogoOCRVinosPageState();
 }
 
@@ -59,7 +59,7 @@ class _CatalogoOCRVinosPageState extends State<CatalogoOCRVinosPage> {
                       Navigator.push(context,
                           MaterialPageRoute(
                             builder: (context) => VinoDetailPage(vino:widget.vinos[_current],flag: 1,),
-                           ),
+                            ),
                       );
                     },
                     //=>Navigator.pushNamed(context, '/infovino',arguments: _current + 1),
@@ -81,7 +81,7 @@ class _CatalogoOCRVinosPageState extends State<CatalogoOCRVinosPage> {
                   onPressed:()=> Navigator.pushNamed(context, '/inicio'),
                   color: Colors.deepOrangeAccent,
                 )
-                 )
+                )
           ],
         ),
       ),

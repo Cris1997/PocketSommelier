@@ -6,10 +6,12 @@ import 'package:pocket_sommelier/src/pages/vinodetail_page.dart';
 import 'package:pocket_sommelier/src/providers/vino_provider.dart';
 import 'package:pocket_sommelier/src/utils/mapa.dart';
 
+/*Esta pagina se encarga de desplegar el carrousel con las imágenes de los vinos */
+
 class CatalogoVinosPage extends StatefulWidget {
-   int vinoid;//Identificaro del vino proveniente de la pantalla anterior
-   CatalogoVinosPage({this.vinoid});//Constructor de la clase
-   @override
+    int vinoid;//Identificador del vino proveniente de la pantalla anterior
+    CatalogoVinosPage({this.vinoid});//Constructor de la clase
+    @override
   _CatalogoVinosPageState createState() => _CatalogoVinosPageState();
 }
 
@@ -73,7 +75,7 @@ class _CatalogoVinosPageState extends State<CatalogoVinosPage> {
                       Navigator.push(context,
                           MaterialPageRoute(
                             builder: (context) => VinoDetailPage(vino:listaVinos[_current],flag: 1,),
-                           ),
+                            ),
                       );
                     },
                     //=>Navigator.pushNamed(context, '/infovino',arguments: _current + 1),

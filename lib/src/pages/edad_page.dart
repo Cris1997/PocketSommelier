@@ -1,12 +1,15 @@
 
 import  'package:flutter/material.dart';
- 
+
+/* Esta pantalla solicita que el usuario confirme que es mayor de edad,
+en caso contrario la aplicación notificara que para su uso deben 
+cumplir ese requisito*/
 class EdadPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold( 
-         backgroundColor: Colors.black, 
-         body: Column( 
+          backgroundColor: Colors.black, 
+          body: Column( 
             children: <Widget>[
               Container(
                   height: 150,
@@ -16,7 +19,7 @@ class EdadPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 28
                 ),
-               )),
+              )),
               ),
               Image(
                   height: 250,
@@ -40,7 +43,7 @@ class EdadPage extends StatelessWidget {
                   MaterialButton( 
                       height: 40.0, 
                       shape: RoundedRectangleBorder(
-                                     borderRadius: new BorderRadius.circular(10.0),
+                                    borderRadius: new BorderRadius.circular(10.0),
                       ),
                       minWidth: 70.0, 
                       color: Colors.deepOrangeAccent, 
@@ -55,14 +58,13 @@ class EdadPage extends StatelessWidget {
                               ), 
                       splashColor: Colors.orange,
                       onPressed: () => {
-                           //Navigator.push(context, new MaterialPageRoute(builder: (context) => new Inicio()))
-                           Navigator.pushNamed(context, '/inicio')
+                          Navigator.pushNamed(context, '/inicio')
                       },
                   ),
                   MaterialButton( 
                       height: 40.0, 
                       shape: RoundedRectangleBorder(
-                                     borderRadius: new BorderRadius.circular(10.0),
+                                    borderRadius: new BorderRadius.circular(10.0),
                               ),
                       minWidth: 70.0, 
                       color: Colors.deepOrangeAccent, 

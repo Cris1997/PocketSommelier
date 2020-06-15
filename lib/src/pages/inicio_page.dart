@@ -81,7 +81,6 @@ class _InicioPageState extends State<InicioPage> {
   Widget _botonEtiqueta(){
 
   return RaisedButton(
-        //padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 60.0),
         textColor: Colors.white,
         child: Text(
                     "Etiqueta de vino",
@@ -95,8 +94,6 @@ class _InicioPageState extends State<InicioPage> {
           borderRadius: new BorderRadius.circular(10.0),
         ),
         onPressed: () {
-          //Navigator.push(context, new MaterialPageRoute(builder: (context) => new UIinfo()))
-          //_mostrarAlert(context);
           Navigator.pushNamed(context,'/foto_etiqueta');
         },
       );
@@ -105,7 +102,6 @@ class _InicioPageState extends State<InicioPage> {
 Widget _botonLista(){
 
   return RaisedButton(
-        //padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 60.0),
         textColor: Colors.white,
         child: Text(
                 "Lista de vinos",

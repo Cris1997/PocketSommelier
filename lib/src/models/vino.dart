@@ -38,11 +38,11 @@ class Vino {
     this.name_image,
     this.precio
     });
-   /*
-   Este método funciona para convertir los datos JSON en 
-   instancias de tipo Vino.
+    /*
+    Este método funciona para convertir los datos JSON en 
+    instancias de tipo Vino.
    */
-   factory Vino.fromJson(Map<String, dynamic> json) {
+    factory Vino.fromJson(Map<String, dynamic> json) {
     return Vino(
       identificador: json['_id'],
       nombre: json['nombre'],
@@ -56,8 +56,7 @@ class Vino {
       aroma: json['aroma'],
       sabor: json['sabor'],
       maridaje: json['maridaje'],
-     // name_image: json['name_image'],
       precio: json['precio']
       );
-   }
+    }
 }

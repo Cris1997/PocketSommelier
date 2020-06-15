@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:pocket_sommelier/src/pages/listavino_page.dart';
   
+/*Esta clase permite tomar la fotografía a la lista de vinos y procesarla para que
+otra clase haga la peticion a la API */
 class CamaraListaPage extends StatefulWidget {
   @override
   _CamaraListaPageState createState() => _CamaraListaPageState();

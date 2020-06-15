@@ -9,7 +9,7 @@ import 'package:pocket_sommelier/src/pages/procesando_page.dart';
 import 'package:pocket_sommelier/src/pages/vinodetail_page.dart';
 
 
-
+//Función  principal 
 void main() {
   runApp(new MyApp());
 }
@@ -22,13 +22,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
     title: 'Pocket Sommelier',
     color: Colors.deepOrangeAccent,
-    // Start the app with the "/" named route. In this case, the app starts
-    // on the FirstScreen widget.
     debugShowCheckedModeBanner: false,
     theme: ThemeData(accentColor: Colors.deepOrangeAccent),
     initialRoute: '/',
     routes: {
-      // Pantalla inicial al abrir la app
+      // Pantalla inicial al arrancar el app
       '/': (context) => EdadPage(),
       //Pantalla inicio de usuaerio
       '/inicio': (context) => InicioPage(),
