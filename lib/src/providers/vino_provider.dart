@@ -55,7 +55,7 @@ Future<List<Vino>> findAllWines() async {
 
 Future<List<Vino>> obtenerRecomendaciones(int id_vino) async {
   
-  final url = "http://${IP}/recomendador/${id_vino}";
+  final url = "http://${IP}/recomendador?id=${id_vino}";
   final resp = await http.get(url);
 
   var jsonfiles  = json.decode(resp.body);
