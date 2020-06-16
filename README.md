@@ -73,5 +73,45 @@ Esta clase fue creada para manejar de una manera más eficiente los datos que ll
    &nbsp;
   <img src="https://github.com/Cris1997/GUIS/blob/master/7.png" width="250" height="400">
 </p>
+<p align = "left">
+<b>Error</b>
+   &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+<b>Detalle vino</b>
+   &nbsp; &nbsp; &nbsp; &nbsp; 
+<b>Catálogo de vinos</b>
+</p>
+<p align="center">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/11.png" width="250" height="400">
+   &nbsp; 
+   &nbsp; 
+   &nbsp; 
+   &nbsp; 
+  <img src="https://github.com/Cris1997/GUIS/blob/master/5.png" width="250" height="400">
+   &nbsp; 
+   &nbsp; 
+   &nbsp; 
+   &nbsp;
+  <img src="https://github.com/Cris1997/GUIS/blob/master/4.png" width="250" height="400">
+</p>
+<p align = "left">
+<b>Notificación etiqueta de vino</b>
+   &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+<b>Notificación carta de vinos</b>
+   &nbsp; &nbsp; &nbsp; &nbsp; 
+<b>Captura a botella</b>
+</p>
+<p align="center">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/3.png" width="250" height="400">
+   &nbsp; 
+   &nbsp; 
+   &nbsp; 
+   &nbsp; 
+  <img src="https://github.com/Cris1997/GUIS/blob/master/9.png" width="250" height="400">
+   &nbsp; 
+   &nbsp; 
+   &nbsp; 
+   &nbsp;
+  <img src="https://github.com/Cris1997/GUIS/blob/master/8.png" width="250" height="400">
+</p>
 
 
