@@ -53,7 +53,17 @@ Esta clase fue creada para manejar de una manera más eficiente los datos que ll
 </p>
 
 ## 4.- Interfaces Gráficas
-El código correspondiente a esta pantalla se encuentra en: ,
+<p align = "center">
+<b>Edad usuario</b>
+   &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+  
+Menú inicio
+   &nbsp; 
+   &nbsp; 
+   &nbsp; 
+   &nbsp; 
+Procesando
+</p>
 <p align="center">
   <img src="https://github.com/Cris1997/Assets/blob/master/1.png" width="250" height="400">
    &nbsp; 
