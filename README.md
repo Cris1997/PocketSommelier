@@ -12,7 +12,7 @@ A new Flutter project.
 El código correspondiente a esta pantalla se encuentra en: ,
 <p align="center">
   <img src="https://github.com/Cris1997/Assets/blob/master/1.png" width="300" height="500">
-  <img src="https://github.com/Cris1997/Assets/blob/master/1.png" width="300" height="600">
+  <img src="https://github.com/Cris1997/Assets/blob/master/1.png" width="300" height="500">
 </p5
 
 
