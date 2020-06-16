@@ -37,19 +37,14 @@
 
 
 
+Conoce más sobre el API en: <a href="https://github.com/Cris1997/API">API Pocket Sommelier</a>
 
 
+## 3.- Clase Vino
 
+Esta clase fue creada para manejar de una manera más eficiente los datos que llegan a la aplicación. Su estructura se 
 
-
-
-
-
-# pocket_sommelier
-
-A new Flutter project.
-
-## 5.- Interfaces Gráficas
+## 4.- Interfaces Gráficas
 El código correspondiente a esta pantalla se encuentra en: ,
 <p align="center">
   <img src="https://github.com/Cris1997/Assets/blob/master/1.png" width="250" height="400">
@@ -63,6 +58,6 @@ El código correspondiente a esta pantalla se encuentra en: ,
    &nbsp; 
    &nbsp;
   <img src="https://github.com/Cris1997/Assets/blob/master/IMG_1125.PNG" width="250" height="400">
-</p5
+</p>
 
 
