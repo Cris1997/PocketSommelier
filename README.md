@@ -54,11 +54,11 @@ Esta clase fue creada para manejar de una manera más eficiente los datos que ll
 
 ## 4.- Interfaces Gráficas
 <p align = "left">
-<b>Edad usuario</b>
+<b>Imagen 4.1 Edad usuario</b>
    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-<b>Menú inicio</b>
+<b>Imagen 4.2 Menú inicio</b>
    &nbsp; &nbsp; &nbsp; &nbsp; 
-<b>Procesando</b>
+<b>Imagen 4.3 Procesando</b>
 </p>
 <p align="center">
   <img src="https://github.com/Cris1997/GUIS/blob/master/2.png" width="250" height="400">
@@ -74,11 +74,11 @@ Esta clase fue creada para manejar de una manera más eficiente los datos que ll
   <img src="https://github.com/Cris1997/GUIS/blob/master/7.png" width="250" height="400">
 </p>
 <p align = "left">
-<b>Error</b>
+<b>Imagen 4.4 Error</b>
    &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-<b>Detalle vino</b>
+<b>Imagen 4.5 Detalle vino</b>
    &nbsp; &nbsp; &nbsp; &nbsp; 
-<b>Catálogo de vinos</b>
+<b>Imagen 4.6 Catálogo de vinos</b>
 </p>
 <p align="center">
   <img src="https://github.com/Cris1997/GUIS/blob/master/11.png" width="250" height="400">
@@ -94,11 +94,11 @@ Esta clase fue creada para manejar de una manera más eficiente los datos que ll
   <img src="https://github.com/Cris1997/GUIS/blob/master/4.png" width="250" height="400">
 </p>
 <p align = "left">
-<b>Notificación etiqueta de vino</b>
-   &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-<b>Notificación carta de vinos</b>
+<b>Imagen 4.8 Notificación etiqueta de vino</b>
+   &nbsp; &nbsp; &nbsp; &nbsp;
+<b>Imagen 4.9 Notificación carta de vinos</b>
    &nbsp; &nbsp; &nbsp; &nbsp; 
-<b>Captura a botella</b>
+<b>Imagen 4.10 Captura a botella</b>
 </p>
 <p align="center">
   <img src="https://github.com/Cris1997/GUIS/blob/master/3.png" width="250" height="400">
@@ -114,7 +114,7 @@ Esta clase fue creada para manejar de una manera más eficiente los datos que ll
   <img src="https://github.com/Cris1997/GUIS/blob/master/8.png" width="250" height="400">
 </p>
 <p align = "left">
-<b>Captura a menú</b>
+<b>Imagen 4.11 Captura a menú</b>
 </p>
 <p align="center">
   <img src="https://github.com/Cris1997/GUIS/blob/master/10.png" width="250" height="400">
