@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Cris1997/Assets/blob/master/Pocket%20Sommelier.png">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/12.png">
 </p>
 
 <p align="center">El presente proyecto contiene la implementación en su totalidad de la aplicación móvil Pocket Sommelier. En la siguiente tabla se listan las interfaces gráficas con su codificación correspondiente y la ruta para su consulta inmediata por parte de el lector. La visualización de cada una de las interfaces que aparecen en la tabla puede ser consultada al final de este README.</p>
@@ -42,11 +42,14 @@ Conoce más sobre el API en: <a href="https://github.com/Cris1997/API">API Pocke
 
 ## 3.- Clase Vino
 
-Esta clase fue creada para manejar de una manera más eficiente los datos que llegan a la aplicación. Su estructura tiene todas las propiedades vinícolas que se van a mostrar en la aplicación, junto con dos métodos: un constructor para inicializar los objetos de este tipo y otro que convertirá cada uno de los archivos JSON en una instancia de esta clase. Su declaración se puede consultar < a href= "https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/models/vino.dart">aquí</a>
+Esta clase fue creada para manejar de una manera más eficiente los datos que llegan a la aplicación. Su estructura tiene todas las propiedades vinícolas que se van a mostrar en la aplicación, junto con dos métodos: un constructor para inicializar los objetos de este tipo y otro que convertirá cada uno de los archivos JSON en una instancia de esta clase. Su declaración se puede consultar <a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/models/vino.dart">aquí</a>
 
 
 <p align = "center">
    <img src= "https://github.com/Cris1997/Assets/blob/master/vino.png" width="250" height="400">
+</p>
+<p align  = "center">
+  Imagen 3.1. Clase Vino
 </p>
 
 ## 4.- Interfaces Gráficas
