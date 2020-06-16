@@ -13,6 +13,23 @@
 |Procesando|<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/procesando_page.dart">procesando_page.dart</a>|
 |Error|<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/error_page.dart">error_page.dart</a>|
 |Detalle vino|<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/vinodetail_page.dart">vinodetail_page.dart</a>|
+|Catálogo de vinos|<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/catalogo_page.dart">catalogo_page.dart</a>|
+|Notificación etiqueta de vino |<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/etiquetavino_page.dart">catalogo_page.dart</a>|
+|Notificación carta de vinos|<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/carta_vinopage.dart">catalogo_page.dart</a>|
+|Captura a botella|<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/camara_page.dart">catalogo_page.dart</a>|
+|Captura a menú|<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/camara_listapage.dart">catalogo_page.dart</a>|
+
+
+
+
+
+
+
+
+
+
+
+
 
 # pocket_sommelier
 
