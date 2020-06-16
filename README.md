@@ -113,5 +113,10 @@ Esta clase fue creada para manejar de una manera más eficiente los datos que ll
    &nbsp;
   <img src="https://github.com/Cris1997/GUIS/blob/master/8.png" width="250" height="400">
 </p>
-
+<p align = "left">
+<b>Captura a menú</b>
+</p>
+<p align="center">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/10.png" width="250" height="400">
+</p>
 
