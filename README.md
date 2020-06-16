@@ -4,6 +4,10 @@
 
 <p align="center">El presente proyecto contiene la implementación en su totalidad de la aplicación móvil Pocket Sommelier. En la siguiente tabla se listan las interfaces gráficas con su codificación correspondiente y la ruta para su consulta inmediata por parte de el lector. La visualización de cada una de las interfaces que aparecen en la tabla puede ser consultada al final de este README.</p>
 
+<p align="center">
+En el punto dos, presentamos al lector la serie de llamadas que es capaz de disparar la aplicación para ejecutar sus funcionalidades. Del mismo modo, se invita a consultar el repositorio de la API para la comprensión en su totalidad de este repositorio.Finalmente, en el punto tres se describe una clase diseñada para el manejo de datos en la aplicación.
+</p>
+
 ## 1.- Código de interfaces
 
 |Nombre de la interfaz|Archivo de implementación|
