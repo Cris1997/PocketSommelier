@@ -2,8 +2,9 @@
   <img src="https://github.com/Cris1997/Assets/blob/master/Pocket%20Sommelier.png">
 </p>
 
-### El presente proyecto contiene la implementación en su totalidad de la aplicación móvil Pocket Sommelier. En la siguiente tabla se listan las interfaces gráficas con su codificación correspondiente y la ruta para su consulta inmediata por parte de el lector. La visualización de cada una de las interfaces que aparecen en la tabla puede ser consultada al final de este README.
+<p align="center">El presente proyecto contiene la implementación en su totalidad de la aplicación móvil Pocket Sommelier. En la siguiente tabla se listan las interfaces gráficas con su codificación correspondiente y la ruta para su consulta inmediata por parte de el lector. La visualización de cada una de las interfaces que aparecen en la tabla puede ser consultada al final de este README.</p>
 
+## 1.- Código de interfaces
 
 |Nombre de la interfaz|Archivo de implementación|
 | ------------- | ------------- |
@@ -17,7 +18,7 @@
 
 A new Flutter project.
 
-## Pantalla de inicio
+## 5.- Interfaces Gráficas
 El código correspondiente a esta pantalla se encuentra en: ,
 <p align="center">
   <img src="https://github.com/Cris1997/Assets/blob/master/1.png" width="250" height="400">
