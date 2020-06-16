@@ -7,7 +7,7 @@
 
 |Nombre de la interfaz|Archivo de implementación|Ubicación|
 |:----|:----:|----:|
-|Edad usuario|edad_page.dart|https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/edad_page.dart|
+|Edad usuario|edad_page.dart|<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/edad_page.dart">go back to index.html</a>|
 
 
 # pocket_sommelier
