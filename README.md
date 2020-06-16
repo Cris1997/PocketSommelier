@@ -42,7 +42,12 @@ Conoce más sobre el API en: <a href="https://github.com/Cris1997/API">API Pocke
 
 ## 3.- Clase Vino
 
-Esta clase fue creada para manejar de una manera más eficiente los datos que llegan a la aplicación. Su estructura se 
+Esta clase fue creada para manejar de una manera más eficiente los datos que llegan a la aplicación. Su estructura tiene todas las propiedades vinícolas que se van a mostrar en la aplicación, junto con dos métodos: un constructor para inicializar los objetos de este tipo y otro que convertirá cada uno de los archivos JSON en una instancia de esta clase. Su declaración se puede consultar < a href= "https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/models/vino.dart">aquí</a>
+
+
+<p align = "center">
+   <img src= "https://github.com/Cris1997/Assets/blob/master/vino.png" width="250" height="400">
+</p>
 
 ## 4.- Interfaces Gráficas
 El código correspondiente a esta pantalla se encuentra en: ,
