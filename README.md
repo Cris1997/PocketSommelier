@@ -26,12 +26,12 @@ El código correspondiente a esta pantalla se encuentra en: ,
    &nbsp; 
    &nbsp; 
    &nbsp; 
-  <img src="https://github.com/Cris1997/Assets/blob/master/1.png" width="250" height="400">
+  <img src="https://github.com/Cris1997/Assets/blob/master/2.png" width="250" height="400">
    &nbsp; 
    &nbsp; 
    &nbsp; 
    &nbsp;
-  <img src="https://github.com/Cris1997/Assets/blob/master/1.png" width="250" height="400">
+  <img src="https://github.com/Cris1997/Assets/blob/master/IMG_1125.PNG" width="250" height="400">
 </p5
 
 
