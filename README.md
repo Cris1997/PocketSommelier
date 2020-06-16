@@ -28,14 +28,11 @@
 
 
 
-| Nombre del método | Descripción |Tipo de petición|
+| Método | Descripción |Tipo de petición|
 | --- | --- | --- |
 | <a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/providers/vino_provider.dart">findAllWines()</a> | Solicita al servicio la información de todos los vinos que hay en la base de datos |GET|
-
 |<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/providers/vino_provider.dart">obtenerRecomendaciones(int id_vino)</a> | Realiza una petición al API para obtener cinco recomendaciones enviando ek identificador del vino|GET|
-
 |<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/envia_foto.dart">loadAsyncData(File foto)</a> |Esta petición envía la fotografía que captura el usuario para ser clasificada por la red neuronal|POST|
-
 | <a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/listavino_page.dart">enviarFotoOCR(File foto)</a>|Proporciona al API la fotografía de la lista de vinos para encontrar los vinos que se encuentran en ella|POST|
 
 
