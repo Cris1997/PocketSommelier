@@ -53,70 +53,86 @@ Esta clase fue creada para manejar de una manera más eficiente los datos que ll
 </p>
 
 ## 4.- Interfaces Gráficas
-<p align = "left">
+<p align = "center">
 <b>Imagen 4.1 Edad usuario</b>
-   &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-<b>Imagen 4.2 Menú inicio</b>
-   &nbsp; &nbsp; &nbsp; &nbsp; 
-<b>Imagen 4.3 Procesando</b>
 </p>
 <p align="center">
   <img src="https://github.com/Cris1997/GUIS/blob/master/2.png" width="250" height="400">
-   &nbsp; 
-   &nbsp; 
-   &nbsp; 
-   &nbsp; 
-  <img src="https://github.com/Cris1997/GUIS/blob/master/1.png" width="250" height="400">
-   &nbsp; 
-   &nbsp; 
-   &nbsp; 
-   &nbsp;
-  <img src="https://github.com/Cris1997/GUIS/blob/master/7.png" width="250" height="400">
 </p>
-<p align = "left">
-<b>Imagen 4.4 Error</b>
-   &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-<b>Imagen 4.5 Detalle vino</b>
-   &nbsp; &nbsp; &nbsp; &nbsp; 
-<b>Imagen 4.6 Catálogo de vinos</b>
+
+<p align = "center">
+<b>Imagen 4.2 Menú inicio</b>
 </p>
-<p align="center">
-  <img src="https://github.com/Cris1997/GUIS/blob/master/11.png" width="250" height="400">
-   &nbsp; 
-   &nbsp; 
-   &nbsp; 
-   &nbsp; 
-  <img src="https://github.com/Cris1997/GUIS/blob/master/5.png" width="250" height="400">
-   &nbsp; 
-   &nbsp; 
-   &nbsp; 
-   &nbsp;
-  <img src="https://github.com/Cris1997/GUIS/blob/master/4.png" width="250" height="400">
+<p align = "center">
+   <img src="https://github.com/Cris1997/GUIS/blob/master/1.png" width="200" height="400">
 </p>
-<p align = "left">
-<b>Imagen 4.8 Notificación etiqueta de vino</b>
-   &nbsp; &nbsp; &nbsp; &nbsp;
-<b>Imagen 4.9 Notificación carta de vinos</b>
-   &nbsp; &nbsp; &nbsp; &nbsp; 
-<b>Imagen 4.10 Captura a botella</b>
+
+<p align = "center">
+<b>Imagen 4.3 Procesando</b>
 </p>
-<p align="center">
-  <img src="https://github.com/Cris1997/GUIS/blob/master/3.png" width="250" height="400">
-   &nbsp; 
-   &nbsp; 
-   &nbsp; 
-   &nbsp; 
-  <img src="https://github.com/Cris1997/GUIS/blob/master/9.png" width="250" height="400">
-   &nbsp; 
-   &nbsp; 
-   &nbsp; 
-   &nbsp;
-  <img src="https://github.com/Cris1997/GUIS/blob/master/8.png" width="250" height="400">
+<p align = "center">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/7.png" width="200" height="400">
 </p>
-<p align = "left">
-<b>Imagen 4.11 Captura a menú</b>
+
+<p align = "center">
+<b>Imagen 4.4 Error</b>  
 </p>
-<p align="center">
-  <img src="https://github.com/Cris1997/GUIS/blob/master/10.png" width="250" height="400">
+<p align = "center">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/11.png" width="200" height="400">
 </p>
+
+<p align = "center">
+<b>Imagen 4.5 Detalle vino</b>  
+</p>
+<p align = "center">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/5.png" width="200" height="400">
+</p>
+
+<p align = "center">
+<b>Imagen 4.6 Catálogo de vinos</b>  
+</p>
+<p align = "center">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/4.png" width="200" height="400">
+</p>
+
+<p align = "center">
+<b>Imagen 4.7 Notificación etiqueta de vino</b>  
+</p>
+<p align = "center">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/3.png" width="200" height="400">
+</p>
+
+<p align = "center">
+<b>Imagen 4.8 Notificación carta de vinos</b> 
+</p>
+<p align = "center">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/9.png" width="200" height="400">
+</p>
+
+<p align = "center">
+<b>Imagen 4.9 Captura a botella</b>  
+</p>
+<p align = "center">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/8.png" width="200" height="400">
+</p>
+
+<p align = "center">
+<b>Imagen 4.10 Captura a menú</b> 
+</p>
+<p align = "center">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/10.png" width="200" height="400">
+</p>
+
+
+
+   
+
+  
+  
+  
+  
+  
+  
+  
+  
 
