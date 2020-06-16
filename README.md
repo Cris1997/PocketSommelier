@@ -8,10 +8,7 @@
 |Nombre de la interfaz|Archivo de implementación|
 |:----|:----:|----:|
 |Edad usuario|<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/edad_page.dart">edad_page.dart</a>|
-|Menú de inicio|<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/inicio_page.dart">inicio_page.dart</a>|
-|Procesando|<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/procesando_page.dart">procesando_page.dart</a>|
-|Error|<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/error_page.dart">error_page.dart</a>|
-|Detalle vino|<a href="https://github.com/Cris1997/PocketSommelier/blob/master/lib/src/pages/vinodetail_page.dart">vinodetail_page.dart</a>|
+
 
 # pocket_sommelier
 
