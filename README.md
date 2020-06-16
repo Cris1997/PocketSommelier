@@ -53,29 +53,25 @@ Esta clase fue creada para manejar de una manera más eficiente los datos que ll
 </p>
 
 ## 4.- Interfaces Gráficas
-<p align = "center">
+<p align = "left">
 <b>Edad usuario</b>
-   &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-  
-Menú inicio
-   &nbsp; 
-   &nbsp; 
-   &nbsp; 
-   &nbsp; 
-Procesando
+   &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+<b>Menú inicio</b>
+   &nbsp; &nbsp; &nbsp; &nbsp; 
+<b>Procesando</b>
 </p>
 <p align="center">
-  <img src="https://github.com/Cris1997/Assets/blob/master/1.png" width="250" height="400">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/2.png" width="250" height="400">
    &nbsp; 
    &nbsp; 
    &nbsp; 
    &nbsp; 
-  <img src="https://github.com/Cris1997/Assets/blob/master/2.png" width="250" height="400">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/1.png" width="250" height="400">
    &nbsp; 
    &nbsp; 
    &nbsp; 
    &nbsp;
-  <img src="https://github.com/Cris1997/Assets/blob/master/IMG_1125.PNG" width="250" height="400">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/7.png" width="250" height="400">
 </p>
 
 
