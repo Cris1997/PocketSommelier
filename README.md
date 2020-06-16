@@ -8,9 +8,12 @@
 
 A new Flutter project.
 
-## Getting Started
+## Pantalla de inicio
+El código correspondiente a esta pantalla se encuentra en: ,
+<p align="left">
+  <img src="https://github.com/Cris1997/Assets/blob/master/1.png" width="500" height="600">
+</p>
 
-This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
