@@ -57,7 +57,7 @@ Esta clase fue creada para manejar de una manera más eficiente los datos que ll
 <b>Imagen 4.1 Edad usuario</b>
 </p>
 <p align="center">
-  <img src="https://github.com/Cris1997/GUIS/blob/master/2.png" width="250" height="400">
+  <img src="https://github.com/Cris1997/GUIS/blob/master/2.png" width="200" height="400">
 </p>
 
 <p align = "center">
